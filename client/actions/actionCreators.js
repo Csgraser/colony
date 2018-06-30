@@ -1,4 +1,5 @@
-
+import axios from 'axios';
+import { browserHistory } from 'react-router';
 //increment
 //Todo add author
 export function increment(index) {
@@ -29,13 +30,23 @@ export function removeComment(postId, i) {
 }
 
 //Create room
-export function createRoom() {
-	return {
-		type: 'CREATE_ROOM'
-	}
-}
+// export function createRoom() {
+// 	return {
+// 		type: 'CREATE_ROOM'
+// 	}
+// }
 
-//Create room async
-export function asyncCreateRoom() {
-	return dispatch => dispatch(createRoom());
+// //Create room async
+// export function asyncCreateRoom() {
+// 	return dispatch => dispatch(createRoom());
+// }
+export function createRoom() {
+  return function(dispatch){
+    axios.post('/createRoom')
+      .then( response => {
+				console.log(response);
+        dispatch({type: 'CREATE_SESSION', payload: response});
+        browserHistory.push('/mainlanding');
+      })
+  }
 }

@@ -1,7 +1,7 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import {asyncCreateRoom} from '../actions/actionCreators';
+import {createRoom} from '../actions/actionCreators';
 import Main from './Main';
 import { library } from '@fortawesome/fontawesome-svg-core';
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -18,7 +18,7 @@ function mapStateToProps(state) {
 function mapDispachToProps(dispatch) {
 	// return bindActionCreators(actionCreators, dispatch);
 	return {
-		createRoom: () => dispatch(asyncCreateRoom())
+		createRoom: () => dispatch(createRoom())
 	}
 }
 

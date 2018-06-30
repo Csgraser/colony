@@ -1,7 +1,7 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import reduxThunk from 'redux-thunk';
-import * as actionCreators from '../actions/actionCreators';
+
+import {asyncCreateRoom} from '../actions/actionCreators';
 import Main from './Main';
 import { library } from '@fortawesome/fontawesome-svg-core';
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -11,13 +11,15 @@ library.add(faThumbsUp,faThumbsDown,faComment);
 
 function mapStateToProps(state) {
   return {
-    posts: state.posts,
-    comments: state.comments
+		connections: state.connections
   }
 }
 
 function mapDispachToProps(dispatch) {
-  return bindActionCreators(actionCreators, dispatch);
+	// return bindActionCreators(actionCreators, dispatch);
+	return {
+		createRoom: () => dispatch(asyncCreateRoom())
+	}
 }
 
 const App = connect(mapStateToProps, mapDispachToProps)(Main);

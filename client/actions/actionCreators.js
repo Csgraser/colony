@@ -1,6 +1,3 @@
-import axios from 'axios';
-import { browserHistory } from 'react-router';
-import { joinRoom, createUserSockets, startGame, hostJoins } from '../sockets_client';
 
 //increment
 //Todo add author
@@ -31,13 +28,14 @@ export function removeComment(postId, i) {
 	}
 }
 
-//Create a game room
-export function createSession() {
-  return function(dispatch){
-    axios.post('/create')
-      .then( response => {
-        dispatch({type: 'CREATE_SESSION', payload: response.data.session.code});
-        browserHistory.push('/userlanding');
-      })
-  }
+//Create room
+export function createRoom() {
+	return {
+		type: 'CREATE_ROOM'
+	}
+}
+
+//Create room async
+export function asyncCreateRoom() {
+	return dispatch => dispatch(createRoom());
 }

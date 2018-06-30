@@ -41,6 +41,7 @@ const router = (
 				<IndexRoute component={GameGrid}></IndexRoute>
 				<Route path="/view/:postId" component={PlayerDetail}></Route>
 				<Route path="/userlanding" component={UserLanding}></Route>
+				<Route path="/mainlanding" component={MainLanding}></Route>
 				<Route path="/linkverification" conponent={LinkVerification}></Route>
 			</Route>
 		</Router>

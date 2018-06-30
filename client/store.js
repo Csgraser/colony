@@ -1,6 +1,7 @@
-import { createStore, compose } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { syncHistoryWithStore} from 'react-router-redux';
 import { browserHistory } from 'react-router';
+import reduxThunk from 'redux-thunk';
 
 // import the root reducer
 import rootReducer from './reducers/index';
@@ -14,7 +15,14 @@ const defaultState = {
   comments
 };
 
-const store = createStore(rootReducer, defaultState);
+const store = createStore(
+	rootReducer, 
+	defaultState,
+	//adding redux thunk to help handle async requests
+	applyMiddleware(
+		reduxThunk
+	)
+);
 
 export const history = syncHistoryWithStore(browserHistory, store);
 

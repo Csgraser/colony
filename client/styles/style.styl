@@ -3,9 +3,9 @@
 @import '_animations.styl'
 
 body
-  background offwhite
+  background darkred
 
-.game-grid
+.photo-grid
   display flex
   flex-wrap wrap
   max-width 1200px
@@ -84,7 +84,7 @@ body
 .grid-photo-wrap
   position relative
   
-.votes-thumbs-up
+.likes-heart
   background url(http://f.cl.ly/items/3Y373q2Q3J3Y1j203n0m/Bitmap-3.png) center no-repeat
   background-size contain
   font-size 2rem
@@ -121,14 +121,6 @@ button, .button
     border-color blue
     outline 0
 
-.buttons {
-	 text-align: center;
-	 color: navy;
-	 animation-delay: 2s;
-	 margin-bottom: 2vh;
-	 margin-top: 15%;
-}
-
 /*
   Cowboy style speech bubble - you should probably use an SVG for this if you are doing more icons.
 */
@@ -152,75 +144,6 @@ button, .button
     top 30%
     left 0
 
-.buttons.animated.bounceIn {
-  margin-top: auto;
-}
-
-
-//Game stuff
-.create.a {
-	text-decoration: none;
-	color: navy !important;
-	width: 150px;
-	height: 50px;
-	font-family: "Gyparody";
-	background: #fee533 ;
-	position: relative;
-	margin: 30px;
-	padding: 16px;
-	font-size: 55px;
-	border-radius: 15px;
-	box-shadow: 0px 10px 0px 0px #fef299 , 0px 0px 20px 0px #bbb;
-	transition: all 0.2s;
-  cursor: pointer;
-}
-
-.create.a:active {
-	top: 6px;
-	box-shadow: 0px 7px 0px 0px #fef299 ;
-}
-
-.create.a:hover {
-	color: #669DD3 !important;
-}
-
-.create {
-	background-color: #fee533 ;
-}
-
-.buttons {
-  text-align: center;
-  color: white;
-  flex-grow: 2;
-  padding-bottom: 50px;
-}
-
-.a {
-  text-decoration: none;
-  color: white;
-  width: 150px;
-  height: 50px;
-  background: #fee533;
-  position: relative;
-  margin: 30px;
-  padding: 13px;
-  font-size: 22px;
-  border-radius: 10px;
-  box-shadow: 0px 10px 0px 0px #fef299, 0px 0px 20px 0px #bbb;
-  transition: all 0.2s;
-  white-space: normal;
-}
-
-.a:active {
-  top: 10px;
-  box-shadow: 0px 7px 0px 0px #fef299;
-}
-
-.btm {
-	margin-top: 30px;
-	margin-bottom: 45px;
-	animation-delay: 2s;
-}
   
   
 

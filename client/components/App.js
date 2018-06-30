@@ -1,10 +1,11 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import reduxThunk from 'redux-thunk';
 import * as actionCreators from '../actions/actionCreators';
 import Main from './Main';
-import { library } from '@fortawesome/fontawesome-svg-core'
+import { library } from '@fortawesome/fontawesome-svg-core';
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faThumbsUp, faThumbsDown, faComment } from '@fortawesome/free-solid-svg-icons'
+import { faThumbsUp, faThumbsDown, faComment } from '@fortawesome/free-solid-svg-icons';
 
 library.add(faThumbsUp,faThumbsDown,faComment);
 

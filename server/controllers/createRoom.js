@@ -12,7 +12,3 @@ exports.createRoom = function(req, res, next) {
 		next();
 	});
 };
-
-exports.addPlayer= function(req,res,next){
-		Monster.update({gameCode: req.gameCode},{$push: {players: req.players}},done);
-};

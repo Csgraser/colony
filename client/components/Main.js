@@ -6,7 +6,7 @@ const Main = React.createClass({
 		return (
 			<div>
 				<h1>
-					<Link to="/">Monster Hosts</Link>
+					<Link to="/">The Colony</Link>
 				</h1>
 				<div className="buttons animated bounceIn">
 					<a className="create a" onClick={this.props.createSession}>Create a Game</a>

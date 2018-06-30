@@ -1,0 +1,81 @@
+import io from 'socket.io-client';
+
+var socket = io('http://localhost:7770');
+
+export const ADD_NEW_USER = 'ADD_NEW_USER';
+export const SET_ACTIVE_USER = 'SET_ACTIVE_USER';
+export const DISABLE_BUTTON = 'DISABLE_BUTTON';
+export const CREATE_NEW_USER = 'CREATE_NEW_USER';
+export const ACTIVATE_GAME = 'ACTIVATE_GAME';
+export const CORRECT_ANSWER = 'CORRECT_ANSWER';
+export const ACTIVATE_BUTTONS = 'ACTIVATE_BUTTONS';
+export const START_GAME_ERROR = 'START_GAME_ERROR';
+
+//nearly all client-side socket listeners will be be contained here
+//initSockets will be exported to client-side index
+export function initSockets(store){
+
+  socket.on('newUser', function(data) {
+  	store.dispatch({type: ADD_NEW_USER, payload: data})
+  });
+
+  socket.on('setActiveUser', function(data){
+    store.dispatch({type: SET_ACTIVE_USER, payload: data.username});
+    store.dispatch({type: DISABLE_BUTTON, payload: data.isButtonClicked});
+  });
+
+  socket.on('gameActive', function(data) {
+    store.dispatch({type: ACTIVATE_GAME, payload: true});
+  });
+
+  // socket.on('correct', function(data) {
+  //   const correct = new Audio('http://www.qwizx.com/gssfx/usa/j64-ringin.wav');
+  //   correct.play();
+  //   store.dispatch({type: CORRECT_ANSWER, payload: data});
+  // });
+
+  // socket.on('skip', function(data) {
+  //   const outOfTime = new Audio('http://www.qwizx.com/gssfx/usa/jtime.wav');
+  //   outOfTime.play();
+  //   store.dispatch({type: SKIP, payload: data});
+  // });
+
+  socket.on('enableButtons', function() {
+    store.dispatch({type: ACTIVATE_BUTTONS, payload: false})
+  });
+
+  // socket.on('skipIncorrect', function(data) {
+  //   const falsePromise = new Audio('http://www.qwizx.com/gssfx/usa/j64-outtatime.wav');
+  //   falsePromise.play();
+  //   store.dispatch({type: SKIP_INCORRECT, payload: data})
+  // });
+
+  socket.on('host', function(data) {
+    store.dispatch({type: START_GAME_ERROR, payload: ''});
+  });
+
+}
+
+//all client-side socket emitters will be contained here
+//functions will be exported to appropriate files
+export function joinRoom(room){
+  socket.emit('joinRoom', {room: room});
+}
+
+// called inside /actions/index.js => createUsername
+export function createUserSockets(username, photo, room) {
+	socket.emit('createUserSockets', {username: username, photo: photo, room: room});
+}
+
+export function sendButtonClick(username, room, clue) {
+  socket.emit('sendButtonClick', {username: username, room: room, clue: clue});
+}
+
+export function startGame(room) {
+  socket.emit('startGame', { room });
+}
+
+export function hostJoins(room) {
+  socket.emit('host', { room })
+}
+

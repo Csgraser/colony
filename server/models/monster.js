@@ -7,7 +7,8 @@ var Schema = mongoose.Schema;
 // This is similar to a Sequelize model
 var monsterSchema = new Schema({
   //code for people to use to join game
-  roomCode: String,
+	roomCode: String,
+	activeRoom: Boolean,
   // This will be an array of players that will hold all the player information.
   players: { type : Array, "default" : []}
 });

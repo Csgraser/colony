@@ -1,4 +1,3 @@
-const CreateSession = require('./controllers/createsession');
 const VerifyCode = require('./controllers/verifycode');
 const CheckSession = require('./controllers/checksession');
 const CreateHost = require('./controllers/createHost');
@@ -12,9 +11,9 @@ module.exports = function(app, io) {
 	  res.sendFile(path.resolve(__dirname + '/../index.html'));
 	});
 
-	app.post('/create', CreateSession.createSession, function(req, res, next) {
-		res.json({ session: req.body.session });
-	});
+	// app.post('/create', CreateSession.createSession, function(req, res, next) {
+	// 	res.json({ session: req.body.session });
+	// });
 
 	app.post('/createHost', CreateHost.createHost, function(req,res){
 		res.json(req.body);
@@ -24,7 +23,7 @@ module.exports = function(app, io) {
 		res.json(req.body);
 	});
 
-	app.post('/addPlayer/:roomCode', AddPlayer.addPlayer, function(req,res){
+	app.post('/addPlayer', AddPlayer.addPlayer, function(req,res){
 		res.json(req.body);
 	});
 

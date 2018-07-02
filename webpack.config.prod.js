@@ -26,18 +26,19 @@ module.exports = {
     })
   ],
   module: {
-    loaders: [
+    rules: [
     // js
     {
       test: /\.js$/,
       loaders: ['babel'],
-      include: path.join(__dirname, 'client')
+      include: path.join(__dirname, './client')
     },
     // CSS
     { 
-      test: /\.styl$/, 
-      include: path.join(__dirname, 'client'),
-      loader: 'style-loader!css-loader!stylus-loader'
+      test: /\.css$/, 
+			include: path.join(__dirname, './client'),
+			// include: path.join(__dirname, './client/styles/style-images/images'),
+      loader: 'css-loader'
     }
     ]
   }

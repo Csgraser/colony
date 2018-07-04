@@ -1,14 +1,8 @@
-const Monster = require('../models/monster');
+const Room = require('../models/room');
 
 exports.createRoom = function(req, res, next) {
-	const room = new Monster({roomCode: null,activeRoom: true});
-	const str = String(room._id);
-	room.roomCode = str.slice(-5);
-
-	room.save(function (err) {
-		if(err) return console.log(err), undefined;
-		console.log(room);
-		req.body.room = room;
-		next();
-	});
+	Room.create({roomCode: null,activeRoom: true})
+	.then(dbResponse => Room.update({_id : dbResponse._id}, {roomCode : dbResponse._id.toString().slice(-5)}))
+	.then(dbResponse => res.json(dbResponse))
+	.catch(err => res.status(500).send('create room error: ' + err))
 };

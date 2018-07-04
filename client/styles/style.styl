@@ -3,7 +3,7 @@
 @import '_animations.styl'
 
 body
-  background url(./style-images/images/colony-background.png)
+  background-image url(./style-images/images/colony-background.png)
 
 .photo-grid
   display flex
@@ -106,12 +106,17 @@ body
     
 button, .button
   border 2px solid lighten(grey, 90%)
-  background none
+  background yellow
   flex-basis 48%
-  display inline-block
+  // display inline-block
+  display block
+  margin-left auto
+  margin-right auto
+  margin-bottom 20px
   line-height 2
   text-decoration none
-  padding 5px
+  padding 30px
+  border-radius: 8px
   text-align center
   font-size 15px
   color blue

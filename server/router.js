@@ -11,9 +11,11 @@ module.exports = function(app, io) {
 	  res.sendFile(path.resolve(__dirname + '/../index.html'));
 	});
 
+
 	// app.post('/api/create', CreateSession.createSession, function(req, res, next) {
 	// 	res.json({ session: req.body.session });
 	// });
+
 
 	// NOT GETTING SUCCESSFUL RESPONSE BUT HOST IS BEING CREATED
 	// app.post('/api/createHost', CreateHost.createHost, function(req,res){

@@ -1,14 +1,28 @@
 import React from 'react';
-import Photo from './Photo';
+import { Link } from 'react-router';
 
-const GameGrid = React.createClass({
+class GameGrid extends React.Component{
+	constructor(props){
+		super(props);
+		this.handleClick = this.handleClick.bind(this);
+	}
+	handleClick() {
+		this.props.createRoom();
+	}
 	render() {
 		return (
 			<div className="game-grid">
-				{/* {this.props.posts.map((post,i) => <Photo {...this.props} key={i} i={i} post={post}/>)} */}
+				<button className="button" onClick={this.handleClick}>Create Room</button>
+			
+				<button className="button animated bounceIn">
+					<Link to="linkverification">
+						Join a Game
+					</Link>
+				</button>
 			</div>
+		
 		)
 	}
-});
+}
 
 export default GameGrid;

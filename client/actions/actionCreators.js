@@ -42,10 +42,10 @@ export function removeComment(postId, i) {
 // }
 export function createRoom() {
   return function(dispatch){
-    axios.post('/createRoom')
+    axios.post('/api/createRoom')
       .then( response => {
 				console.log(response);
-        dispatch({type: 'CREATE_SESSION', payload: response});
+        dispatch({type: 'CREATE_ROOM', payload: response});
         browserHistory.push('/mainlanding');
       })
   }

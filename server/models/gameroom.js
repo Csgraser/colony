@@ -1,4 +1,5 @@
 var mongoose = require("mongoose");
+// var player = require("./player.js")
 
 // Save a reference to the Schema constructor
 var Schema = mongoose.Schema;
@@ -8,9 +9,9 @@ var Schema = mongoose.Schema;
 var gameroomSchema = new Schema({
   //code for people to use to join game
 	roomCode: String,
-	activeRoom: Boolean,
+	activeRoom: Boolean
   // This will be an array of players that will hold all the player information.
-  players: { type : Array, "default" : []}
+  // players: [{type: mongoose.Schema.Types.ObjectId, ref: player}]
 });
 
 // This creates our model from the above schema, using mongoose's model method

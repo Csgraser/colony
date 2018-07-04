@@ -10,6 +10,7 @@ import PlayerDetail from './components/PlayerDetail';
 import UserLanding from './components/game_connections/users_landing';
 import MainLanding from './components/game_connections/main_landing';
 import LinkVerification from './components/game_connections/link_verification';
+import Nav from './components/Nav';
 
 // import react router deps
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
@@ -21,12 +22,12 @@ import Raven from 'raven-js';
 import { sentry_url, logException } from "./data/config";
 
 Raven.config(sentry_url
-// 	, 	{
-// 	tags: {
-// 		git_commit: 'asdfasdf',
-// 		userLevel: 'editor'
-// 	}
-// }
+	// 	, 	{
+	// 	tags: {
+	// 		git_commit: 'asdfasdf',
+	// 		userLevel: 'editor'
+	// 	}
+	// }
 ).install();
 
 //This below two lines would be for capturing errors
@@ -36,12 +37,14 @@ Raven.config(sentry_url
 const router = (
 	<Provider store={store}>
 		<Router history={history}>
+			
 			<Route path="/" component={App}>
-				<IndexRoute component={GameGrid}></IndexRoute>
 				<Route path="/view/:postId" component={PlayerDetail}></Route>
 				<Route path="/userlanding" component={UserLanding}></Route>
 				<Route path="/mainlanding" component={MainLanding}></Route>
 				<Route path="/linkverification" conponent={LinkVerification}></Route>
+				<IndexRoute exact component={GameGrid}>
+				</IndexRoute>
 			</Route>
 		</Router>
 	</Provider>

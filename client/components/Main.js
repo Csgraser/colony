@@ -15,15 +15,7 @@ class Main extends React.Component{
 				<h1>
 					<Link to="/">The Colony</Link>
 				</h1>
-				<button onClick={this.handleClick}>Create Room</button>
-				{/* <div className="buttons animated bounceIn">
-					<a className="create a" onClick={this.props.createRoom}>Create a Room</a>
-				</div> */}
-				<div className="btm animated bounceIn">
-					<Link to="linkverification">
-						<a className="create a">Join a Game</a>
-					</Link>
-				</div>
+				
 				{React.cloneElement({ ...this.props }.children, { ...this.props })}
 			</div>
 		)

@@ -1,4 +1,5 @@
 module.exports = {
 	Monster: require("./monster"),
-	Host: require("./host")
+	Host: require("./host"),
+	Player: require("./player")
 };

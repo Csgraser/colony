@@ -6,7 +6,7 @@ var Schema = mongoose.Schema;
 
 // Using the Schema constructor, create a new NoteSchema object
 // This is similar to a Sequelize model
-var gameroomSchema = new Schema({
+var monsterSchema = new Schema({
   //code for people to use to join game
 	roomCode: String,
 	activeRoom: Boolean
@@ -15,7 +15,7 @@ var gameroomSchema = new Schema({
 });
 
 // This creates our model from the above schema, using mongoose's model method
-var Gameroom = mongoose.model("Gameroom", gameroomSchema);
+var Monster = mongoose.model("Monster", monsterSchema);
 
-// Export the gameroom model
-module.exports = Gameroom;
+// Export the monster model
+module.exports = Monster;

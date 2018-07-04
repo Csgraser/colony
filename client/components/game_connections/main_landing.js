@@ -3,18 +3,27 @@ import { connect } from 'react-redux';
 
 
 class MainLanding extends Component {
-  // componentDidMount(){
-  //   joinRoom(this.props.link);
-  //   this.props.fetchGame();
-	// }
+	constructor(props){
+		super(props)
+		console.log(this.props,'main landing props');
+	}
 
 	render() {
 
     return (
       <div className="linkEnter">
-        <div id="linkcode">Link Code: </div>
+        <div id="linkcode">Game Code: {this.props.connection[0].room.data.room.roomCode}</div>
       </div>
     );
   }
 }
-export default MainLanding
+
+function mapStateToProps(state){
+	return {
+		connection: state.connections
+	}
+}
+
+//Higher order component
+export default connect(mapStateToProps)(MainLanding);
+

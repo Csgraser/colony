@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { render } from 'react-dom';
-import './styles/style.styl';
 
 //import css
 import css from './styles/style.styl';
@@ -13,7 +12,7 @@ import PlayerDetail from './components/PlayerDetail';
 import UserLanding from './components/game_connections/users_landing';
 import MainLanding from './components/game_connections/main_landing';
 import LinkVerification from './components/game_connections/link_verification';
-import Nav from './components/Nav';
+
 
 // import react router deps
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';

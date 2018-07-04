@@ -18,7 +18,7 @@ class GameGrid extends React.Component{
 				</div> */}
 				<div className="btm animated bounceIn">
 					<Link to="linkverification">
-						<a className="create a">Join a Game</a>
+						Join a Game
 					</Link>
 				</div>
 			</div>

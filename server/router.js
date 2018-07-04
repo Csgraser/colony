@@ -1,5 +1,4 @@
 const VerifyCode = require('./controllers/verifycode');
-const CheckSession = require('./controllers/checksession');
 const CreateHost = require('./controllers/createHost');
 const CreateRoom = require('./controllers/createRoom');
 const AddPlayer = require('./controllers/addPlayer');
@@ -12,15 +11,16 @@ module.exports = function(app, io) {
 	  res.sendFile(path.resolve(__dirname + '/../index.html'));
 	});
 
-	app.post('/api/create', CreateSession.createSession, function(req, res, next) {
-		res.json({ session: req.body.session });
-	});
+	// app.post('/api/create', CreateSession.createSession, function(req, res, next) {
+	// 	res.json({ session: req.body.session });
+	// });
 
 	// NOT GETTING SUCCESSFUL RESPONSE BUT HOST IS BEING CREATED
 	// app.post('/api/createHost', CreateHost.createHost, function(req,res){
 	// 	res.json({user : req.body.user});
 	// });
 
+	// This is working
 	app.post('/api/createRoom', CreateRoom.createRoom, function(req, res, next){
 		res.json(req.body);
 	});
@@ -29,6 +29,7 @@ module.exports = function(app, io) {
 	// 	res.json(req.body);	
 	// });
 
+	// Trying to PUT player into room
 	app.put('/api/addPlayer/:roomCode', AddPlayer.addPlayer, function(req,res){
 		res.json(req.body);
 	});

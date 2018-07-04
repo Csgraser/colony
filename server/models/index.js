@@ -1,4 +1,4 @@
 module.exports = {
-	Monster: require("./monster"),
+	Room: require("./room"),
 	Host: require("./host")
 };

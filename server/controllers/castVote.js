@@ -1,5 +1,5 @@
-const Monster = require('../models/monster');
+const Room = require('../models/room');
 
 exports.castVote = function(req,res,next){
-	Monster.update({gameCode: req.gameCode},{$push: {players: req.players.vote}},next);
+	Room.update({gameCode: req.gameCode},{$push: {players: req.players.vote}},next);
 };

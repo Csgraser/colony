@@ -15,7 +15,7 @@ const Sockets= require('./server/socket_server');
 const compiler = webpack(config);
 
 //----------Database stuff-------------------
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/monster";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/colony";
 mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI);
 

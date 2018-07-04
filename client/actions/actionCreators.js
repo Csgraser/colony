@@ -45,7 +45,7 @@ export function createRoom() {
     axios.post('/createRoom')
       .then( response => {
 				console.log(response);
-        dispatch({type: 'CREATE_SESSION', payload: response});
+        dispatch({type: 'CREATE_ROOM', payload: response});
         browserHistory.push('/mainlanding');
       })
   }

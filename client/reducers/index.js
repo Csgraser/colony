@@ -8,6 +8,12 @@ import comments from './comments';
 import gameplay from './gameplay_reducer';
 import connections from './connection_reducer';
 
-const rootReducer = combineReducers({posts, comments, gameplay, connections, routing: routerReducer });
+const rootReducer = combineReducers({
+	posts, 
+	comments, 
+	gameplay, 
+	connections, 
+	routing: routerReducer 
+});
 
 export default rootReducer;

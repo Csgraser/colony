@@ -1,16 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const Main = React.createClass({
+class Main extends React.Component{
+	constructor(props){
+		super(props);
+		this.handleClick = this.handleClick.bind(this);
+	}
+	handleClick() {
+		this.props.createRoom();
+	}
 	render() {
 		return (
 			<div>
 				<h1>
 					<Link to="/">The Colony</Link>
 				</h1>
-				<div className="buttons animated bounceIn">
-					<a className="create a" onClick={this.props.createSession}>Create a Game</a>
-				</div>
+				<button onClick={this.handleClick}>Create Room</button>
+				{/* <div className="buttons animated bounceIn">
+					<a className="create a" onClick={this.props.createRoom}>Create a Room</a>
+				</div> */}
 				<div className="btm animated bounceIn">
 					<Link to="linkverification">
 						<a className="create a">Join a Game</a>
@@ -20,6 +28,6 @@ const Main = React.createClass({
 			</div>
 		)
 	}
-});
+};
 
 export default Main;

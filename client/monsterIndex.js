@@ -1,8 +1,7 @@
 import React from 'react';
 
 import { render } from 'react-dom';
-//import css
-import css from './styles/style.styl';
+
 
 //import components
 import App from './components/App';
@@ -41,6 +40,7 @@ const router = (
 				<IndexRoute component={GameGrid}></IndexRoute>
 				<Route path="/view/:postId" component={PlayerDetail}></Route>
 				<Route path="/userlanding" component={UserLanding}></Route>
+				<Route path="/mainlanding" component={MainLanding}></Route>
 				<Route path="/linkverification" conponent={LinkVerification}></Route>
 			</Route>
 		</Router>

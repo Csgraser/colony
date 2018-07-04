@@ -1,4 +1,3 @@
-const CreateSession = require('./controllers/createsession');
 const VerifyCode = require('./controllers/verifycode');
 const CheckSession = require('./controllers/checksession');
 const CreateHost = require('./controllers/createHost');
@@ -33,8 +32,9 @@ module.exports = function(app, io) {
 	app.put('/api/addPlayer/:roomCode', AddPlayer.addPlayer, function(req,res){
 		res.json(req.body);
 	});
-
+  
 	app.post('/api/castVote/:roomCode/:username', CastVote.castVote, function(req,res){
+
 		res.json(req.body);
 	})
 

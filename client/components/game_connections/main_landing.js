@@ -12,7 +12,7 @@ class MainLanding extends Component {
 
     return (
       <div className="linkEnter">
-        <div id="linkcode">Game Code: {this.props.connection[0].room.data.room.roomCode}</div>
+        <div id="linkcode">Game Code: {this.props.connection[0].room.data.roomCode}</div>
       </div>
     );
   }

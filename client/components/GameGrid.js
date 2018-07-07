@@ -14,8 +14,13 @@ class GameGrid extends React.Component{
 			<div className="game-grid">
 				<button className="" onClick={this.handleClick}>Create Room</button>
 			
+
 				<button>
 					<Link className="button" to="linkverification">
+
+				<button className="button">
+					<Link className="buttonName" to="linkverification">
+
 						Join a Game
 					</Link>
 				</button>

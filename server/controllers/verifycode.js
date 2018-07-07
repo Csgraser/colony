@@ -1,4 +1,4 @@
-const Session = require('../models/monster');
+const Session = require('../models/room');
 
 exports.verifyCode = function(req, res, next) {
 	const code = req.body.roomCode.toLowerCase();

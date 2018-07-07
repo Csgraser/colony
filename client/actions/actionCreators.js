@@ -44,7 +44,7 @@ export function createRoom() {
   return function(dispatch){
     axios.post('/api/createRoom')
       .then( response => {
-				console.log(response);
+				console.log('action creator response: ', response);
         dispatch({type: 'CREATE_ROOM', payload: response});
         browserHistory.push('/mainlanding');
       })

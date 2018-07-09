@@ -12,14 +12,8 @@ module.exports = function(app, io) {
 	});
 
 
-	// app.post('/api/create', CreateSession.createSession, function(req, res, next) {
+	// app.post('/join', CreateSession.createSession, function(req, res, next) {
 	// 	res.json({ session: req.body.session });
-	// });
-
-
-	// NOT GETTING SUCCESSFUL RESPONSE BUT HOST IS BEING CREATED
-	// app.post('/api/createHost', CreateHost.createHost, function(req,res){
-	// 	res.json({user : req.body.user});
 	// });
 
 	// This is working

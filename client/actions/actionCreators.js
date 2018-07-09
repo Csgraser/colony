@@ -30,7 +30,7 @@ export function removeComment(postId, i) {
 }
 
 //Join a Room
-export function joinRoom(name,code){
+export function join(name,code){
 	return {
 		type: 'JOIN_ROOM',
 		name,

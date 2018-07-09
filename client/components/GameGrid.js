@@ -4,22 +4,22 @@ import { Link } from 'react-router';
 class GameGrid extends React.Component{
 	constructor(props){
 		super(props);
-		this.handleClick = this.handleClick.bind(this);
+		this.handleCreateClick = this.handleCreateClick.bind(this);
+		// this.handleJoinClick = this.handleJoinClick.bind(this);
 	}
-	handleClick() {
+	handleCreateClick() {
 		this.props.createRoom();
 	}
+	// handleJoinClick() {
+	// 	this.props.joinRoom();
+	// }
 	render() {
 		return (
 			<div className="game-grid">
-				<button className="" onClick={this.handleClick}>Create Room</button>
-			
-
-				<button>
-					<Link className="button" to="linkverification">
+				<button className="button" onClick={this.handleCreateClick}>Create Room</button>
 
 				<button className="button">
-					<Link className="buttonName" to="linkverification">
+					<Link className="buttonName" to="joinRoom">
 
 						Join a Game
 					</Link>

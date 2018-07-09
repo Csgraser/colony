@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-class GameGrid extends React.Component{
-	constructor(props){
+class GameGrid extends React.Component {
+	constructor(props) {
 		super(props);
 		this.handleCreateClick = this.handleCreateClick.bind(this);
 		// this.handleJoinClick = this.handleJoinClick.bind(this);
@@ -25,7 +25,7 @@ class GameGrid extends React.Component{
 					</Link>
 				</button>
 			</div>
-		
+
 		)
 	}
 }

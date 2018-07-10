@@ -19,7 +19,7 @@ module.exports = function(app, io) {
 	});
 
 
-	// app.post('/api/create', CreateSession.createSession, function(req, res, next) {
+	// app.post('/join', CreateSession.createSession, function(req, res, next) {
 	// 	res.json({ session: req.body.session });
 	// });
 
@@ -33,7 +33,7 @@ module.exports = function(app, io) {
 	// });
 
 	// PUT player into room
-	app.put('/api/addPlayer/:roomCode', AddPlayer.addPlayer, function(req,res){
+	app.put('/api/addPlayer', AddPlayer.addPlayer, function(req,res,next){
 		res.json(req.body);
 	});
 

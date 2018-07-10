@@ -3,9 +3,15 @@ import { connect } from 'react-redux';
 
 class Join extends Component {
     constructor(props) {
-        super(props)
+				super(props)
+			  this.handleClick = this.handleClick.bind(this);
         console.log(this.props, 'join props');
-    }
+		}
+		
+		handleClick(event) {
+			event.preventDefault;
+			this.props.joinRoom();
+		}
 
     render() {
 
@@ -19,7 +25,7 @@ class Join extends Component {
                 Name
                 <input type="text" name="name" />
                 </label>
-                <input type="submit" value="Enter Room" />
+                <input type="submit" value="Enter Room" onClick={this.handleClick} />
             </form>
 
         );

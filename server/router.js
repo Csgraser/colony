@@ -32,7 +32,7 @@ module.exports = function(app, io) {
 	// });
 
 	// PUT player into room
-	app.put('/api/addPlayer/:roomCode', AddPlayer.addPlayer, function(req,res){
+	app.put('/api/addPlayer', AddPlayer.addPlayer, function(req,res,next){
 		res.json(req.body);
 	});
 

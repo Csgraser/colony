@@ -1,5 +1,7 @@
 const VerifyCode = require('./controllers/verifycode');
 const CreateHost = require('./controllers/createHost');
+const StartGame = require('./controllers/startGame');
+const GetPlayerData = require('./controllers/getPlayerData');
 const CreateRoom = require('./controllers/createRoom');
 const AddPlayer = require('./controllers/addPlayer');
 const CastVote = require('./controllers/castVote');
@@ -9,6 +11,10 @@ const express = require('express');
 module.exports = function(app, io) {
 	app.get('/', function(req, res) {
 	  res.sendFile(path.resolve(__dirname + '/../index.html'));
+	});
+
+	app.get('/api/getPlayerData/:roomCode', GetPlayerData.getPlayerData, function(req, res) {
+	  res.json(res);
 	});
 
 
@@ -25,13 +31,18 @@ module.exports = function(app, io) {
 	// 	res.json(req.body);	
 	// });
 
-	// Trying to PUT player into room
+	// PUT player into room
 	app.put('/api/addPlayer/:roomCode', AddPlayer.addPlayer, function(req,res){
 		res.json(req.body);
 	});
-  
-	app.post('/api/castVote/:roomCode/:username', CastVote.castVote, function(req,res){
 
+	// PUT toggles 'running' property in Room to true
+	app.put('/api/startGame/:roomCode', StartGame.startGame, function(req,res){
+		res.json(req.body);
+	});
+  
+  
+	app.put('/api/castVote/:roomCode/:username', CastVote.castVote, function(req,res){
 		res.json(req.body);
 	})
 

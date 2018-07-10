@@ -6,7 +6,12 @@ function createRoom(state = [], action){
 				...state,
 				{room: action.payload}
 			];
-
+		case 'JOIN_ROOM':
+			console.log('you have joined the room');
+			return [
+				...state,
+				{room: action.payload}
+			]
 		default: 
 			return state;
 	}

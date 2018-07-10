@@ -10,8 +10,8 @@ const app = express();
 const router = require('./server/router');
 const mongoose = require('mongoose');
 const server = http.createServer(app);
-const io = require('socket.io')(server);
-const Sockets= require('./server/socket_server');
+const io = module	.exports.io = require('socket.io')(server);
+const SocketServer= require('./server/socket_server');
 const compiler = webpack(config);
 
 //----------Database stuff-------------------
@@ -43,11 +43,7 @@ app.use(bodyParser.json({type: '*/*'}));
 
 router(app, io);
 
-io.on('connection', function(socket){
-  var clients= io.sockets.adapter;
-  var ioAccess= io.sockets
-  Sockets.initSockets(socket, clients, ioAccess);
-});
+io.on('connection', SocketServer);
 
 const PORT = process.env.PORT || 7770;
 server.listen(PORT, 'localhost', function(err) {

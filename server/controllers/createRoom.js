@@ -3,7 +3,8 @@ const Room = require('../models/room');
 exports.createRoom = function (req, res, next) {
 	Room.create({
 			roomCode: null,
-			activeRoom: true
+			activeRoom: true,
+			running: false
 		})
 		.then(dbResponse => Room.findOneAndUpdate({
 			_id: dbResponse._id

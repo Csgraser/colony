@@ -14,14 +14,16 @@ const responseGoogle = (response) => {
 class GameGrid extends React.Component {
 	constructor(props) {
 		super(props);
-		this.handleCreateClick = this.handleCreateClick.bind(this);
+		this.onSignIn = this.onSignIn.bind(this);
+		this.createThisDangRoom = this.createThisDangRoom.bind(this);
 	}
-	handleCreateClick() {
+	createThisDangRoom() {
 		this.props.createRoom();
 	}
 
 	onSignIn(response) {
 		console.log("success", response);
+		this.createThisDangRoom();
 	}
 	onFailedSignIn(response) {
 		console.log("failure", response);
@@ -33,20 +35,22 @@ class GameGrid extends React.Component {
 
 			{!this.props.auth.isSignedIn && (
 
-				<GoogleLogin 
+				<GoogleLogin className="button"
 				clientId="368878887068-dqo0j4ru3m1uk6jgsjuvh823lq0871d2.apps.googleusercontent.com"
-				buttonText="Login"
-				onSuccess={this.props.onSignIn}
+				buttonText="Login & Create Game Room"
+				onSuccess={this.onSignIn}
 				onFailure={() => console.log("LOGIN FAILURE")}
 				/>
 			)}
-				<button className="button">
-					<Link className="buttonName" to="linkverification">
+				<Link className="buttonName" to="joinForm">
+					<button className="button">
 
-						Join a Game
-					</Link>
-				</button>
+							Join a Game
+						
+					</button>
+				</Link>
 			</div>
+			
 		)
 	}
 }

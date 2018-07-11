@@ -31,19 +31,11 @@ export function removeComment(postId, i) {
 
 //Join a Room
 export function joinRoom(name,code){
-	return function(dispatch){
-		axios.put('/api/addPlayer',{code,name})
-		.then( response => {
-			console.log('join room action creator response: ', response);
-			dispatch({type: 'JOIN_ROOM', payload: response});
-			browserHistory.push('/userslanding');
-		})
+	return {
+		type: 'JOIN_ROOM',
+		name,
+		code
 	}
-	// {
-	// 	type: 'JOIN_ROOM',
-	// 	name,
-	// 	code
-	// }
 }
 
 // Create a room and code for users to enter room then redirect user to main game landing page

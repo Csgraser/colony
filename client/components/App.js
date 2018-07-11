@@ -11,7 +11,7 @@ library.add(faThumbsUp,faThumbsDown,faComment);
 
 function mapStateToProps(state) {
   return {
-		connections: state.connections
+		connection: state.connection
   }
 }
 

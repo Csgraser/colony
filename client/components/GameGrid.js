@@ -7,7 +7,6 @@ import { GoogleLogin } from 'react-google-login';
 import { connect } from 'react-redux';
 import { handleSignIn } from '../actions/auth.actions';
 
-
 const responseGoogle = (response) => {
 	console.log(response);
 }
@@ -15,11 +14,12 @@ const responseGoogle = (response) => {
 class GameGrid extends React.Component {
 	constructor(props) {
 		super(props);
-		this.handleClick = this.handleClick.bind(this);
+		this.handleCreateClick = this.handleCreateClick.bind(this);
 	}
-	handleClick() {
+	handleCreateClick() {
 		this.props.createRoom();
 	}
+
 	onSignIn(response) {
 		console.log("success", response);
 	}
@@ -47,7 +47,6 @@ class GameGrid extends React.Component {
 					</Link>
 				</button>
 			</div>
-
 		)
 	}
 }

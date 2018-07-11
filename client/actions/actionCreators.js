@@ -38,11 +38,6 @@ export function joinRoom(name,code){
 			browserHistory.push('/userlanding');
 		})
 	}
-	// {
-	// 	type: 'JOIN_ROOM',
-	// 	name,
-	// 	code
-	// }
 }
 
 // Create a room and code for users to enter room then redirect user to main game landing page

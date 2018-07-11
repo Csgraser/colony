@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { Component } from 'react';
 // import Avatar from 'material-ui/Avatar';
 
@@ -46,6 +47,22 @@ export default class UserLanding extends Component {
 			</div>
 		);
 	}
+=======
+import React from 'react';
+import UserCard from '../UserCard';
+// import Avatar from 'material-ui/Avatar';
+
+
+const UsersListEntry = (props) => {
+	return (
+		<div className="userImage">
+			<div>
+				<UserCard />
+	
+    </div>
+		</div>
+	);
+>>>>>>> master
 }
 
 

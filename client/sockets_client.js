@@ -58,9 +58,9 @@ export function initSockets(store){
 
 //all client-side socket emitters will be contained here
 //functions will be exported to appropriate files
-export function joinRoom(room){
-  socket.emit('joinRoom', {room: room});
-}
+// export function joinRoom(room){
+//   socket.emit('joinRoom', {room: room});
+// }
 
 // called inside /actions/index.js => createUsername
 export function createUserSockets(username, photo, room) {

@@ -4,7 +4,18 @@ import { connect } from 'react-redux';
 
 class MainLanding extends Component {
 	constructor(props){
-		super(props)
+		super(props);
+		// this.state = {
+		// 	connection: [
+		// 		{
+		// 			room: {
+		// 				data: {
+		// 					roomCode: ''
+		// 				}
+		// 			}
+		// 		}
+		// 	]
+		// }
 		console.log(this.props,'main landing props');
 	}
 

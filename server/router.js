@@ -1,5 +1,8 @@
 const VerifyCode = require('./controllers/verifycode');
 const CreateHost = require('./controllers/createHost');
+const StartGame = require('./controllers/startGame');
+const EndGame = require('./controllers/endGame');
+const GetPlayerData = require('./controllers/getPlayerData');
 const CreateRoom = require('./controllers/createRoom');
 const AddPlayer = require('./controllers/addPlayer');
 const CastVote = require('./controllers/castVote');
@@ -11,15 +14,13 @@ module.exports = function(app, io) {
 	  res.sendFile(path.resolve(__dirname + '/../index.html'));
 	});
 
+	app.get('/api/getPlayerData/:roomCode', GetPlayerData.getPlayerData, function(req, res) {
+	  res.json(res);
+	});
 
-	// app.post('/api/create', CreateSession.createSession, function(req, res, next) {
+
+	// app.post('/join', CreateSession.createSession, function(req, res, next) {
 	// 	res.json({ session: req.body.session });
-	// });
-
-
-	// NOT GETTING SUCCESSFUL RESPONSE BUT HOST IS BEING CREATED
-	// app.post('/api/createHost', CreateHost.createHost, function(req,res){
-	// 	res.json({user : req.body.user});
 	// });
 
 	// This is working
@@ -31,13 +32,23 @@ module.exports = function(app, io) {
 	// 	res.json(req.body);	
 	// });
 
-	// Trying to PUT player into room
-	app.put('/api/addPlayer/:roomCode', AddPlayer.addPlayer, function(req,res){
+	// PUT player into room
+	app.put('/api/addPlayer', AddPlayer.addPlayer, function(req,res,next){
 		res.json(req.body);
 	});
-  
-	app.post('/api/castVote/:roomCode/:username', CastVote.castVote, function(req,res){
 
+	// PUT toggles 'running' property in Room to true
+	app.put('/api/startGame/:roomCode', StartGame.startGame, function(req,res){
+		res.json(req.body);
+	});
+
+		// PUT toggles 'running' property in Room to false
+		app.put('/api/endGame/:roomCode', EndGame.endGame, function(req,res){
+			res.json(req.body);
+		});
+  
+  
+	app.put('/api/castVote/:roomCode/:username', CastVote.castVote, function(req,res){
 		res.json(req.body);
 	})
 

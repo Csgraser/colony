@@ -29,12 +29,6 @@ export function removeComment(postId, i) {
 
 //Join a Room
 export function joinRoom(name,code){
-<<<<<<< HEAD
-	return {
-		type: 'JOIN_ROOM',
-		name,
-		code
-=======
 	console.log('join room action: ', name, code);
 	return function(dispatch){
 		axios.put('/api/addPlayer',{code,name})
@@ -43,7 +37,6 @@ export function joinRoom(name,code){
 			dispatch({type: 'JOIN_ROOM', payload: response});
 			browserHistory.push('/userlanding');
 		})
->>>>>>> 06bc2a8f9326f6c2bc65af777c20d776afed16c3
 	}
 }
 

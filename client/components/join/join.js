@@ -43,11 +43,7 @@ class Join extends Component {
                 Name
                 <input type="text" ref="name" />
                 </label>
-<<<<<<< HEAD
-                <input type="button" value="Enter Room" onClick={this.handleClick} />
-=======
                 <input type="submit" value="Enter Room"  />
->>>>>>> 06bc2a8f9326f6c2bc65af777c20d776afed16c3
             </form>
 
         );

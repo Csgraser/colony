@@ -18,8 +18,8 @@ class Join extends Component {
 		handleClick(event) {
 			event.preventDefault();
 			
-			const code = this.refs.code.value;
-			const name = this.refs.name.value;
+			const code = this.refs.code;
+			const name = this.refs.name;
 			console.log('refs', code, ' : ', name);
 			// const {name,code} = event.target;
 			this.props.joinRoom(name,code);

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import "./join.styl"
 
 class Join extends Component {
     constructor(props) {
@@ -20,12 +21,15 @@ class Join extends Component {
                 <label>
                 Code
                 <input type="text" name="code" />
+                <br/>
                 </label>
                 <label>
                 Name
                 <input type="text" name="name" />
+                <br/>
                 </label>
-                <input type="submit" value="Enter Room" onClick={this.handleClick} />
+                <br/>
+                <input type="submit" className="submitButton" value="Enter Room" onClick={this.handleClick} />
             </form>
 
         );

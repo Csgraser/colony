@@ -5,19 +5,37 @@ import "./join.styl"
 class Join extends Component {
     constructor(props) {
 				super(props)
-			  this.handleClick = this.handleClick.bind(this);
+				this.handleClick = this.handleClick.bind(this);
+				// this.handleChange = this.handleChange.bind(this);
+
+				// this.state = {
+				// 	code: '',
+				// 	name: ''
+				// }
         console.log(this.props, 'join props');
 		}
 		
 		handleClick(event) {
-			event.preventDefault;
-			this.props.joinRoom();
+			event.preventDefault();
+			
+			const code = this.refs.code.value;
+			const name = this.refs.name.value;
+			console.log('refs', code, ' : ', name);
+			// const {name,code} = event.target;
+			this.props.joinRoom(name,code);
 		}
+
+		// handleChange(event) {
+		// 	const {name,value} = event.target;
+		// 	this.setState({
+		// 		[name]: value
+		// 	})
+		// }
 
     render() {
 
         return (
-            <form className="join">
+            <form className="join" onSubmit={this.handleClick} >
                 <label>
                 Code
                 <input type="text" name="code" />
@@ -30,6 +48,8 @@ class Join extends Component {
                 </label>
                 <br/>
                 <input type="submit" className="submitButton" value="Enter Room" onClick={this.handleClick} />
+                
+               
             </form>
 
         );
@@ -38,7 +58,7 @@ class Join extends Component {
 
 function mapStateToProps(state) {
     return {
-        connection: state.connections
+				connection: state.connections
     }
 }
 

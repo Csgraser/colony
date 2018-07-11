@@ -8,11 +8,11 @@ const uuidv4 = require('uuid/v4');
 *	@param {object} 
 *		name {string}
 */
-const createUser = ({name = ""} = {})=>(
-	console.log('2. create user hit', name),
+const createUser = ({name = "", socketId = null} = {})=>(
 	{
 		id:uuidv4(),
-		name
+		name,
+		socketId
 		
 	}
 )

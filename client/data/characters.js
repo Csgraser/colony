@@ -2,58 +2,66 @@ export const colonists = [
 	{
 		"name": "Male Colonist",
 
-		"photo": "../styles/style-images/images/male-colonist.png",
-		"role": "Colonist"
+		"photo": "json-images/male-colonist.png",
+		"ability": [
+			//this is where we will put functionality for the ability of the class
+		],
+		"type": "general",
+		"role": "clean"
 	},
 	{
 		"name": "Female Colonist",
 
-		"photo": "../styles/style-images/images/female-colonist.png",
-		"role": "Colonist"
+		"photo": "json-images/female-colonist.png",
+		"ability": [
+			//this is where we will put functionality for the ability of the class
+		],
+		"type": "general",
+		"role": "clean"
 	},
 	{
 		"name": "Genderless Colonist",
 
-		"photo": "../styles/style-images/images/genderfluid-colonist.png",
-		"role": "Colonist"
+		"photo": "json-images/genderfluid-colonist.png",
+		"ability": [
+			//this is where we will put functionality for the ability of the class
+		],
+		"type": "general",
+		"role": "clean"
 	},
 
-	{
-		"name": "Alien Colonist",
-
-		"photo": "../styles/style-images/images/alien-colonist.png",
-		"role": "Colonist"
-	},
-]
-
-export const infected = [
 	{
 		"name": "Male Infected",
 
-		"photo": "../styles/style-images/images/male-infected.png",
-		"role": "Infected"
+		"photo": "json-images/male-infected.png",
+		"ability": [
+			//this is where we will put functionality for the ability of the class
+		],
+		"type": "general",
+		"role": "infected"
 	},
 
 	{
 		"name": "Female Infected",
 
-		"photo": "../styles/style-images/images/female-infected.png",
-		"role": "Infected"
+		"photo": "json-images/female-infected.png",
+		"ability": [
+			//this is where we will put functionality for the ability of the class
+		],
+		"type": "general",
+		"role": "infected"
 	},
 
 	{
 		"name": "Genderless Infected",
 
-		"photo": "../styles/style-images/images/genderfluid-infected.png",
-		"role": "Infected"
-	},
-
-	{
-		"name": "Alien Infected",
-
-		"photo": "../styles/style-images/images/alien-infected.png",
-		"role": "Infected"
+		"photo": "json-images/genderfluid-infected.png",
+		"ability": [
+			//this is where we will put functionality for the ability of the class
+		],
+		"type": "general",
+		"role": "infected"
 	},
 ]
 
-// module.exports = {colonists, infected};
+module.exports = colonists;

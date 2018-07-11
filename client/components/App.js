@@ -1,7 +1,8 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import {createRoom} from '../actions/actionCreators';
+// import {createRoom,joinRoom,addMainSocketURL} from '../actions/actionCreators';
+import * as actionCreators from '../actions/actionCreators';
 import Main from './Main';
 import { library } from '@fortawesome/fontawesome-svg-core';
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -11,15 +12,19 @@ library.add(faThumbsUp,faThumbsDown,faComment);
 
 function mapStateToProps(state) {
   return {
-		connection: state.connection
+		connection: state.connections,
+		socket: state.socket,
+		colonists: state.colonists
   }
 }
 
 function mapDispachToProps(dispatch) {
-	// return bindActionCreators(actionCreators, dispatch);
-	return {
-		createRoom: () => dispatch(createRoom())
-	}
+	return bindActionCreators(actionCreators, dispatch);
+	// return {
+	// 	createRoom: () => dispatch(createRoom()),
+	// 	joinRoom: () => dispatch(joinRoom()),
+	// 	addMainSocketURL: () => dispatch(addMainSocketURL())
+	// }
 }
 
 const App = connect(mapStateToProps, mapDispachToProps)(Main);

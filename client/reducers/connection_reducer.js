@@ -11,7 +11,7 @@ function createRoom(state = [], action){
 			return [
 				...state,
 				{room: action.payload}
-			]
+			];
 		default: 
 			return state;
 	}

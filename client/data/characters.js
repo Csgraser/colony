@@ -5,7 +5,9 @@ var colonists = [
 		"photo": "json-images/male-colonist.png",
 		"ability": [
 			//this is where we will put functionality for the ability of the class
-		]
+		],
+		"type": "general",
+		"role": "clean"
 	},
 	{
 		"name": "Female Colonist",
@@ -13,7 +15,9 @@ var colonists = [
 		"photo": "json-images/female-colonist.png",
 		"ability": [
 			//this is where we will put functionality for the ability of the class
-		]
+		],
+		"type": "general",
+		"role": "clean"
 	},
 	{
 		"name": "Genderless Colonist",
@@ -21,18 +25,20 @@ var colonists = [
 		"photo": "json-images/genderfluid-colonist.png",
 		"ability": [
 			//this is where we will put functionality for the ability of the class
-		]
+		],
+		"type": "general",
+		"role": "clean"
 	},
-]
 
-var infected = [
 	{
 		"name": "Male Infected",
 
 		"photo": "json-images/male-infected.png",
 		"ability": [
 			//this is where we will put functionality for the ability of the class
-		]
+		],
+		"type": "general",
+		"role": "infected"
 	},
 
 	{
@@ -41,7 +47,9 @@ var infected = [
 		"photo": "json-images/female-infected.png",
 		"ability": [
 			//this is where we will put functionality for the ability of the class
-		]
+		],
+		"type": "general",
+		"role": "infected"
 	},
 
 	{
@@ -50,9 +58,10 @@ var infected = [
 		"photo": "json-images/genderfluid-infected.png",
 		"ability": [
 			//this is where we will put functionality for the ability of the class
-		]
+		],
+		"type": "general",
+		"role": "infected"
 	},
 ]
 
 module.exports = colonists;
-module.exports = infected;

@@ -6,13 +6,13 @@ import reduxThunk from 'redux-thunk';
 // import the root reducer
 import rootReducer from './reducers/index';
 
-import comments from './data/comments';
-import posts from './data/posts';
+import {colonists} from './data/characters';
+
 
 // create an object for the default data
 const defaultState = {
-  posts,
-  comments
+	colonists,
+	socket: ''
 };
 
 const store = createStore(

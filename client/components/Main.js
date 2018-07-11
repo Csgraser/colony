@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import { connect } from 'react-redux';
 import io from 'socket.io-client';
 
 const socketUrl = "http://localhost:7770";
@@ -24,7 +25,13 @@ class Main extends React.Component {
 		socket.on('connect', () => {
 			console.log('Connected as socket Id: ' + socket.id);
 		})
-		this.setState({ socket })
+		// this.setState({ socket })
+		this.addSocketURL(socket);
+	}
+
+	addSocketURL(socketURL){
+		this.props.addMainSocketURL(socketURL);
+		console.log(this.props);
 	}
 
 	render() {

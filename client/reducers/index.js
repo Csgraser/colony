@@ -2,7 +2,7 @@
 
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
-
+import authReducer from './auth.reducer';
 import posts from './posts';
 import comments from './comments';
 import gameplay from './gameplay_reducer';
@@ -13,7 +13,8 @@ const rootReducer = combineReducers({
 	comments, 
 	gameplay, 
 	connections, 
-	routing: routerReducer 
+	routing: routerReducer,
+	auth: authReducer
 });
 
 export default rootReducer;

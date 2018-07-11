@@ -1,58 +1,59 @@
-var colonists = [
+export const colonists = [
 	{
 		"name": "Male Colonist",
 
-		"photo": "json-images/male-colonist.png",
-		"ability": [
-			//this is where we will put functionality for the ability of the class
-		]
+		"photo": "../styles/style-images/images/male-colonist.png",
+		"role": "Colonist"
 	},
 	{
 		"name": "Female Colonist",
 
-		"photo": "json-images/female-colonist.png",
-		"ability": [
-			//this is where we will put functionality for the ability of the class
-		]
+		"photo": "../styles/style-images/images/female-colonist.png",
+		"role": "Colonist"
 	},
 	{
 		"name": "Genderless Colonist",
 
-		"photo": "json-images/genderfluid-colonist.png",
-		"ability": [
-			//this is where we will put functionality for the ability of the class
-		]
+		"photo": "../styles/style-images/images/genderfluid-colonist.png",
+		"role": "Colonist"
+	},
+
+	{
+		"name": "Alien Colonist",
+
+		"photo": "../styles/style-images/images/alien-colonist.png",
+		"role": "Colonist"
 	},
 ]
 
-var infected = [
+export const infected = [
 	{
 		"name": "Male Infected",
 
-		"photo": "json-images/male-infected.png",
-		"ability": [
-			//this is where we will put functionality for the ability of the class
-		]
+		"photo": "../styles/style-images/images/male-infected.png",
+		"role": "Infected"
 	},
 
 	{
 		"name": "Female Infected",
 
-		"photo": "json-images/female-infected.png",
-		"ability": [
-			//this is where we will put functionality for the ability of the class
-		]
+		"photo": "../styles/style-images/images/female-infected.png",
+		"role": "Infected"
 	},
 
 	{
 		"name": "Genderless Infected",
 
-		"photo": "json-images/genderfluid-infected.png",
-		"ability": [
-			//this is where we will put functionality for the ability of the class
-		]
+		"photo": "../styles/style-images/images/genderfluid-infected.png",
+		"role": "Infected"
+	},
+
+	{
+		"name": "Alien Infected",
+
+		"photo": "../styles/style-images/images/alien-infected.png",
+		"role": "Infected"
 	},
 ]
 
-module.exports = colonists;
-module.exports = infected;
+// module.exports = {colonists, infected};

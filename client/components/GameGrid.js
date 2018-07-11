@@ -1,23 +1,45 @@
 import React from 'react';
 import { Link } from 'react-router';
+import axios from 'axios';
+require('../../server/controllers/auth.js');
+import ReactDOM from 'react-dom';
+import { GoogleLogin } from 'react-google-login';
+import { connect } from 'react-redux';
+import { handleSignIn } from '../actions/auth.actions';
 
-class GameGrid extends React.Component{
-	constructor(props){
+
+const responseGoogle = (response) => {
+	console.log(response);
+}
+
+class GameGrid extends React.Component {
+	constructor(props) {
 		super(props);
 		this.handleClick = this.handleClick.bind(this);
 	}
 	handleClick() {
 		this.props.createRoom();
 	}
+	onSignIn(response) {
+		console.log("success", response);
+	}
+	onFailedSignIn(response) {
+		console.log("failure", response);
+	}
+
 	render() {
 		return (
 			<div className="game-grid">
-				<button className="" onClick={this.handleClick}>Create Room</button>
-			
 
-				<button>
-					<Link className="button" to="linkverification">
+			{!this.props.auth.isSignedIn && (
 
+				<GoogleLogin 
+				clientId="368878887068-dqo0j4ru3m1uk6jgsjuvh823lq0871d2.apps.googleusercontent.com"
+				buttonText="Login"
+				onSuccess={this.props.onSignIn}
+				onFailure={() => console.log("LOGIN FAILURE")}
+				/>
+			)}
 				<button className="button">
 					<Link className="buttonName" to="linkverification">
 
@@ -25,9 +47,21 @@ class GameGrid extends React.Component{
 					</Link>
 				</button>
 			</div>
-		
+
 		)
 	}
 }
 
-export default GameGrid;
+function mapStateToProps(state){
+	return {
+		auth: state.auth
+	}
+}
+
+function mapDispatchToProps(dispatch){
+	return {
+		onSignIn: () => dispatch(handleSignIn())
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(GameGrid);

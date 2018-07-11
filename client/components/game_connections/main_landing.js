@@ -25,7 +25,6 @@ class MainLanding extends Component {
 			<div>
       <div className="linkEnter">
         <div id="linkcode">Game Code: {this.props.connection[0].room.data.roomCode}</div>
-			  <div>socket: {this.props.socket[0].socket.id}</div>
       
 			</div>
 			<button className="startGameButton">Start Game</button>

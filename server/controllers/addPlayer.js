@@ -2,8 +2,8 @@ const Room = require('../models/room');
 
 exports.addPlayer= function(req, res){
 	// var alias = req.body;
-	console.log('add player controllers', req.body);
-	Room.update({roomCode : req.body.code}, {$push: {players: req.body.name}})
+	console.log('add player controllers', req.body, 'res: ', req.params);
+	Room.update({roomCode : req.params.code}, {$push: {players: req.params.name}})
 	.then(response => res.json(response))
 	.catch(err => res.status(500).send('there was an error in addPlayer: ' + err))
 };

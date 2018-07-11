@@ -2,15 +2,16 @@
 
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
+
+import colonists from './colonists_reducer';
+import socket from './socket';
 import authReducer from './auth.reducer';
-import posts from './posts';
-import comments from './comments';
 import gameplay from './gameplay_reducer';
 import connections from './connection_reducer';
 
 const rootReducer = combineReducers({
-	posts, 
-	comments, 
+	colonists,
+	socket,
 	gameplay, 
 	connections, 
 	routing: routerReducer,

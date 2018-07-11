@@ -5,6 +5,7 @@ import { routerReducer } from 'react-router-redux';
 
 import colonists from './colonists_reducer';
 import socket from './socket';
+import authReducer from './auth.reducer';
 import gameplay from './gameplay_reducer';
 import connections from './connection_reducer';
 
@@ -13,7 +14,8 @@ const rootReducer = combineReducers({
 	socket,
 	gameplay, 
 	connections, 
-	routing: routerReducer 
+	routing: routerReducer,
+	auth: authReducer
 });
 
 export default rootReducer;

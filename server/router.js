@@ -1,6 +1,7 @@
 const VerifyCode = require('./controllers/verifycode');
 const CreateHost = require('./controllers/createHost');
 const StartGame = require('./controllers/startGame');
+const EndGame = require('./controllers/endGame');
 const GetPlayerData = require('./controllers/getPlayerData');
 const CreateRoom = require('./controllers/createRoom');
 const AddPlayer = require('./controllers/addPlayer');
@@ -40,6 +41,11 @@ module.exports = function(app, io) {
 	app.put('/api/startGame/:roomCode', StartGame.startGame, function(req,res){
 		res.json(req.body);
 	});
+
+		// PUT toggles 'running' property in Room to false
+		app.put('/api/endGame/:roomCode', EndGame.endGame, function(req,res){
+			res.json(req.body);
+		});
   
   
 	app.put('/api/castVote/:roomCode/:username', CastVote.castVote, function(req,res){

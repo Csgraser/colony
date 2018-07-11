@@ -1,4 +1,4 @@
-var colonists = [
+export const colonists = [
 	{
 		"name": "Male Colonist",
 

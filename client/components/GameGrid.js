@@ -36,6 +36,7 @@ class GameGrid extends React.Component {
 			{!this.props.auth.isSignedIn && (
 
 				<GoogleLogin 
+				className="button"
 				clientId="368878887068-dqo0j4ru3m1uk6jgsjuvh823lq0871d2.apps.googleusercontent.com"
 				buttonText="Login"
 				onSuccess={this.onSignIn}

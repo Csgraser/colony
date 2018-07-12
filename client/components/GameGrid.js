@@ -1,21 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router';
-<<<<<<< HEAD
-import UserLanding from './game_connections/users_landing'
-
-class GameGrid extends React.Component {
-	constructor(props) {
-		super(props);
-		this.handleClick = this.handleClick.bind(this);
-
-	}
-
-
-	handleClick() {
-		this.props.createRoom();
-	}
-
-=======
 import axios from 'axios';
 require('../../server/controllers/auth.js');
 import ReactDOM from 'react-dom';
@@ -44,22 +28,10 @@ class GameGrid extends React.Component {
 	onFailedSignIn(response) {
 		console.log("failure", response);
 	}
->>>>>>> master
 
 	render() {
 		return (
 			<div className="game-grid">
-<<<<<<< HEAD
-				<button className="button" onClick={this.handleClick}>Create Room</button>
-
-				<Link className="buttonName" to="/joinRoom" >
-					<button className="button">
-						Join a Game
-				</button>
-				</ Link>
-			</div>
-
-=======
 
 			{!this.props.auth.isSignedIn && (
 
@@ -79,7 +51,6 @@ class GameGrid extends React.Component {
 				</Link>
 			</div>
 			
->>>>>>> master
 		)
 	}
 }

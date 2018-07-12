@@ -49,3 +49,7 @@ module.exports = function (socket) {
 	})
 
 }
+
+function isUser(userList, username){
+	return username in userList
+}

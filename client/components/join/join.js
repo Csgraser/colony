@@ -2,63 +2,72 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class Join extends Component {
-<<<<<<< HEAD
 	constructor(props) {
 		super(props)
-		console.log(this.props, 'join props');
+		this.handleClick = this.handleClick.bind(this);
+		// this.handleChange = this.handleChange.bind(this);
 
 		this.state = {
-			nickname: "",
-			gameCode: "",
-			error: ""
-		};
+			user: ''
+		}
+		console.log(this.props, 'join props');
 	}
 
-
 	// This will set the username provided or provide an error to the user that the name is already taken.
-	setUser({ user, isUser }) {
+	checkUser({ user, isUser }) {
 		console.log('3', user, isUser);
 		if (isUser) {
 			this.setError("User name taken")
 		} else {
 			this.setError("")
-			this.props.setUser(user)
+			this.setUser(user)
 		}
 	}
 
-	handleSubmit(event) {
-		event.preventDefault()
-		const { socket } = this.props
-		const { nickname } = this.state
-		socket.emit(VERIFY_USER, nickname, this.setUser)
+		/*
+	* 	Sets the user property in state 
+	*	@param user {id:number, name:string}
+	*/
+	setUser(user) {
+		const {socket} = this.props.socket[0].socket
+		console.log('4. layout setuser hit', {socket}, user);
+		socket.emit("USER_CONNECTED", user);
+		this.setState({user})
 	}
 
-	handleChange(event) {
-		const { name, value } = event.target;
-		this.setState({
-			[name]: value
-		});
+	handleClick(event) {
+		event.preventDefault();
+		const socket = this.props.socket[0].socket
+		console.log(socket);
+		const code = this.refs.code.value;
+		const name = this.refs.name.value;
+		console.log('refs', code, ' : ', name);
+		// const {name,code} = event.target;
+		this.props.joinRoom(name, code);
+		socket.emit("VERIFY_USER", name, this.checkUser)
 	}
 
-	setError(error) {
-		this.setState({ error })
-	}
-
-
+	// handleChange(event) {
+	// 	const {name,value} = event.target;
+	// 	this.setState({
+	// 		[name]: value
+	// 	})
+	// }
 
 	render() {
 
 		return (
-			<form className="join">
+			<form className="join" onSubmit={this.handleClick} >
+			<h2>{this.props.socket[0].socket.id}</h2>
 				<label>
 					Code
-                <input type="text" name="gameCode" onClick={this.handleChange} />
+                <input type="text" ref="code" onChange={this.handleChange} />
 				</label>
 				<label>
 					Name
-                <input type="text" name="nickname" onClick={this.handleChange} />
+                <input type="text" ref="name" />
 				</label>
-				<input type="submit" value="Enter Room" onClick={this.handleSubmit} />
+				<input type="submit" value="Enter Room" />
 			</form>
 
 		);
@@ -69,60 +78,6 @@ function mapStateToProps(state) {
 	return {
 		connection: state.connections
 	}
-=======
-    constructor(props) {
-				super(props)
-				this.handleClick = this.handleClick.bind(this);
-				// this.handleChange = this.handleChange.bind(this);
-
-				// this.state = {
-				// 	code: '',
-				// 	name: ''
-				// }
-        console.log(this.props, 'join props');
-		}
-		
-		handleClick(event) {
-			event.preventDefault();
-			
-			const code = this.refs.code.value;
-			const name = this.refs.name.value;
-			console.log('refs', code, ' : ', name);
-			// const {name,code} = event.target;
-			this.props.joinRoom(name,code);
-		}
-
-		// handleChange(event) {
-		// 	const {name,value} = event.target;
-		// 	this.setState({
-		// 		[name]: value
-		// 	})
-		// }
-
-    render() {
-
-        return (
-            <form className="join" onSubmit={this.handleClick} >
-                <label>
-                Code
-                <input type="text" ref="code" onChange={this.handleChange}/>
-                </label>
-                <label>
-                Name
-                <input type="text" ref="name" />
-                </label>
-                <input type="submit" value="Enter Room"  />
-            </form>
-
-        );
-    }
-}
-
-function mapStateToProps(state) {
-    return {
-				connection: state.connections
-    }
->>>>>>> master
 }
 
 //Higher order component

@@ -46,11 +46,7 @@ const router = (
 				<Route path="/userlanding" component={UserLanding}></Route>
 				<Route path="/mainlanding" component={MainLanding}></Route>
 				<Route path="/linkverification" conponent={LinkVerification}></Route>
-<<<<<<< HEAD
-				<Route path="/joinRoom" component={Join}></Route>
-=======
 				<Route path="/joinForm" component={JoinForm}></Route>
->>>>>>> master
 				<IndexRoute exact component={GameGrid}>
 				</IndexRoute>
 			</Route>

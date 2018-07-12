@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import "./join.styl"
 
 class Join extends Component {
     constructor(props) {
@@ -17,8 +18,8 @@ class Join extends Component {
 		handleClick(event) {
 			event.preventDefault();
 			
-			const code = this.refs.code.value;
-			const name = this.refs.name.value;
+			const code = this.refs.code;
+			const name = this.refs.name;
 			console.log('refs', code, ' : ', name);
 			// const {name,code} = event.target;
 			this.props.joinRoom(name,code);
@@ -37,13 +38,18 @@ class Join extends Component {
             <form className="join" onSubmit={this.handleClick} >
                 <label>
                 Code
-                <input type="text" ref="code" onChange={this.handleChange}/>
+                <input type="text" name="code" />
+                <br/>
                 </label>
                 <label>
                 Name
-                <input type="text" ref="name" />
+                <input type="text" name="name" />
+                <br/>
                 </label>
-                <input type="submit" value="Enter Room"  />
+                <br/>
+                <input type="submit" className="submitButton" value="Enter Room" onClick={this.handleClick} />
+                
+               
             </form>
 
         );

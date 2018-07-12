@@ -38,7 +38,7 @@ class GameGrid extends React.Component {
 				<GoogleLogin 
 				className="button"
 				clientId="368878887068-dqo0j4ru3m1uk6jgsjuvh823lq0871d2.apps.googleusercontent.com"
-				buttonText="Login"
+				buttonText="Login & Create Game Room"
 				onSuccess={this.onSignIn}
 				onFailure={() => console.log("LOGIN FAILURE")}
 				/>

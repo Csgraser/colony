@@ -6,8 +6,8 @@ export default function GameHostCard(props) {
 	return (
 		<div className="GameHostCard">
 			<div className="GameHostCard-image" />
-			<span className="GameHostCard-name">HardCodedUser</span>
-			<span className="GameHostCard-role">colonist or infected</span>
+			<span className="GameHostCard-timer">Timer Here</span>
+			<button className="button">End Game</button>
 		</div>
 	)
 }

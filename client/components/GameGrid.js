@@ -50,6 +50,14 @@ class GameGrid extends React.Component {
 						
 					</button>
 				</Link>
+
+				<Link className="instructions" to="instructions">
+					<button className="button">
+
+							How to Play 
+						
+					</button>
+				</Link>
 			</div>
 			
 		)

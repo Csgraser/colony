@@ -52,7 +52,7 @@ router(app, io);
 io.on('connection', SocketServer);
 
 const PORT = process.env.PORT || 7770;
-server.listen(PORT, 'localhost', function(err) {
+server.listen(PORT, function(err) {
   if (err) {
     console.log(err);
     return;

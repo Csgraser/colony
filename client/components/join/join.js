@@ -8,7 +8,8 @@ class Join extends Component {
 		// this.handleChange = this.handleChange.bind(this);
 
 		this.state = {
-			user: ''
+			user: '',
+			error: ''
 		}
 		console.log(this.props, 'join props');
 	}
@@ -24,15 +25,19 @@ class Join extends Component {
 		}
 	}
 
-		/*
-	* 	Sets the user property in state 
-	*	@param user {id:number, name:string}
-	*/
+	setError(error) {
+		this.setState({ error })
+	}
+
+	/*
+* 	Sets the user property in state 
+*	@param user {id:number, name:string}
+*/
 	setUser(user) {
-		const {socket} = this.props.socket[0].socket
-		console.log('4. layout setuser hit', {socket}, user);
+		const { socket } = this.props.socket[0].socket
+		console.log('4. layout setuser hit', { socket }, user);
 		socket.emit("USER_CONNECTED", user);
-		this.setState({user})
+		this.setState({ user })
 	}
 
 	handleClick(event) {
@@ -55,10 +60,9 @@ class Join extends Component {
 	// }
 
 	render() {
-
 		return (
 			<form className="join" onSubmit={this.handleClick} >
-			<h2>{this.props.socket[0].socket.id}</h2>
+				<h2>{this.props.socket[0].socket.id}</h2>
 				<label>
 					Code
                 <input type="text" ref="code" onChange={this.handleChange} />

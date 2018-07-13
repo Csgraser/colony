@@ -11,6 +11,7 @@ import GameGrid from './components/GameGrid';
 import PlayerDetail from './components/PlayerDetail';
 import UserLanding from './components/game_connections/users_landing';
 import MainLanding from './components/game_connections/main_landing';
+import GameHost from './components/game_connections/game_host';
 import LinkVerification from './components/game_connections/link_verification';
 import JoinForm from './components/join/join';
 import Instructions from './components/instructions/instructions';
@@ -46,6 +47,7 @@ const router = (
 				<Route path="/view/:postId" component={PlayerDetail}></Route>
 				<Route path="/userlanding" component={UserLanding}></Route>
 				<Route path="/mainlanding" component={MainLanding}></Route>
+				<Route path="/gamehost" component={GameHost}></Route>
 				<Route path="/linkverification" conponent={LinkVerification}></Route>
 				<Route path="/joinForm" component={JoinForm}></Route>
 				<Route path="/instructions" component={Instructions}></Route>

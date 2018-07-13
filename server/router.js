@@ -38,7 +38,7 @@ module.exports = function(app, io) {
 	});
 
 	// PUT toggles 'running' property in Room to true
-	app.put('/api/startGame/:roomCode', StartGame.startGame, function(req,res){
+	app.put('/api/startGame/', StartGame.startGame, function(req,res){
 		res.json(req.body);
 	});
 

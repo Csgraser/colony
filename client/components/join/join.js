@@ -20,7 +20,11 @@ class Join extends Component {
 			
 			const code = this.refs.code.value;
 			const name = this.refs.name.value;
+<<<<<<< HEAD
 			console.log('refs', code, ' : ', name, 'event', event.input);
+=======
+			console.log('refs', code, ' : ', name);
+>>>>>>> master
 			// const {name,code} = event.target;
 			this.props.joinRoom(name,code);
 		}
@@ -32,12 +36,20 @@ class Join extends Component {
             <form className="join" onSubmit={this.handleClick} >
                 <label>
                 Code
+<<<<<<< HEAD
                 <input type="text" name="code" ref="code" />
+=======
+                <input type="text" name="code" ref="code"/>
+>>>>>>> master
                 <br/>
                 </label>
                 <label>
                 Name
+<<<<<<< HEAD
                 <input type="text" name="name" ref="name" />
+=======
+                <input type="text" name="name" ref="name"/>
+>>>>>>> master
                 <br/>
                 </label>
                 <br/>

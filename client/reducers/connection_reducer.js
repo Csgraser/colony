@@ -12,6 +12,12 @@ function createRoom(state = [], action){
 				...state,
 				{room: action.payload}
 			];
+			case 'START_GAME':
+			console.log('you have started the game');
+			return [
+				...state,
+				{room: action.payload}
+			];
 		default: 
 			return state;
 	}

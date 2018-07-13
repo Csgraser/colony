@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import "./join.styl"
 
 class Join extends Component {
 	constructor(props) {
@@ -52,27 +53,26 @@ class Join extends Component {
 		socket.emit("VERIFY_USER", name, this.checkUser)
 	}
 
-	// handleChange(event) {
-	// 	const {name,value} = event.target;
-	// 	this.setState({
-	// 		[name]: value
-	// 	})
-	// }
 
-	render() {
-		return (
-			<form className="join" onSubmit={this.handleClick} >
-				<h2>{this.props.socket[0].socket.id}</h2>
-				<label>
-					Code
-                <input type="text" ref="code" onChange={this.handleChange} />
-				</label>
-				<label>
-					Name
-                <input type="text" ref="name" />
-				</label>
-				<input type="submit" value="Enter Room" />
-			</form>
+    render() {
+
+        return (
+            <form className="join" onSubmit={this.handleClick} >
+                <label>
+                Code
+                <input type="text" name="code" />
+                <br/>
+                </label>
+                <label>
+                Name
+                <input type="text" name="name" />
+                <br/>
+                </label>
+                <br/>
+                <input type="submit" className="submitButton" value="Enter Room" onClick={this.handleClick} />
+                
+               
+            </form>
 
 		);
 	}

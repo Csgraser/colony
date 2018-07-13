@@ -25,15 +25,15 @@ import Raven from 'raven-js';
 import { sentry_url, logException } from "./data/config";
 
 Raven.config(sentry_url
-	// 	, 	{
-	// 	tags: {
-	// 		git_commit: 'asdfasdf',
-	// 		userLevel: 'editor'
-	// 	}
-	// }
+		, 	{
+		tags: {
+			git_commit: 'asdfasdf',
+			userLevel: 'editor'
+		}
+	}
 ).install();
 
-//This below two lines would be for capturing errors
+//The below two lines would be for capturing errors
 // Raven.captureMessage('Something bad happened'); //fake an error
 // Raven.showReportDialog(); //report the error to user and allow feedback
 
@@ -54,4 +54,4 @@ const router = (
 	</Provider>
 );
 
-render(router, document.getElementById('root'));
+render(router, document.getElementById('root')); 

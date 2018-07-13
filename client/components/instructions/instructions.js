@@ -1,26 +1,12 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
+import "./instructions.styl"
 
+const Instructions = (props) => (
+    <div className="instructions">
+        <ol className="heading">How to Play</ol>
+        <li className="item">Click on Create Game</li>
+    </div>
+);
 
-// class Instructions extends Component {
-    
-// 		}
-		
-	
-//     render() {
-
-//         return (
-           
-//         );
-//     }
-// }
-
-// function mapStateToProps(state) {
-//     return {
-// 				connection: state.connections
-//     }
-// }
-
-// //Higher order component
-// export default connect(mapStateToProps)(Instructions);
+export default Instructions
 

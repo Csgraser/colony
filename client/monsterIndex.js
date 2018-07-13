@@ -13,6 +13,7 @@ import UserLanding from './components/game_connections/users_landing';
 import MainLanding from './components/game_connections/main_landing';
 import LinkVerification from './components/game_connections/link_verification';
 import JoinForm from './components/join/join';
+import Instructions from './components/instructions/instructions';
 
 
 // import react router deps
@@ -47,6 +48,7 @@ const router = (
 				<Route path="/mainlanding" component={MainLanding}></Route>
 				<Route path="/linkverification" conponent={LinkVerification}></Route>
 				<Route path="/joinForm" component={JoinForm}></Route>
+				<Route path="/instructions" component={Instructions}></Route>
 				<IndexRoute exact component={GameGrid}>
 				</IndexRoute>
 			</Route>

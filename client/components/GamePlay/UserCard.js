@@ -1,5 +1,5 @@
 import React from 'react';
-import { colonists, infected } from '../data/characters';
+import { colonists, infected } from '../../data/characters';
 // import playerImage from `${colonists[0].photo}`;
 
 export default function UserCard(props) {
@@ -11,4 +11,3 @@ export default function UserCard(props) {
 		</div>
 	)
 }
-

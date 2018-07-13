@@ -41,7 +41,7 @@ export const history = syncHistoryWithStore(browserHistory, store, persistor);
 
 if (module.hot) {
 	module.hot.accept('./reducers/', () => {
-		const nextRootReducer = require('./reducers/index').default;
+		const nextRootReducer = require('./reducers').default;
 		store.replaceReducer(nextRootReducer);
 	});
 }

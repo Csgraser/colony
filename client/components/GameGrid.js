@@ -5,7 +5,7 @@ require('../../server/controllers/auth.js');
 import ReactDOM from 'react-dom';
 import { GoogleLogin } from 'react-google-login';
 import { connect } from 'react-redux';
-import { handleSignIn } from '../actions/auth.actions';
+import { handleSignIn } from '../actions/auth.actions.js';
 
 const responseGoogle = (response) => {
 	console.log(response);

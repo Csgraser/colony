@@ -1,5 +1,5 @@
 import React from 'react';
-import GameHostCard from '../GameHostCard'
+import GameHostCard from '../GamePlay/GameHostCard'
 // import Avatar from 'material-ui/Avatar';
 
 

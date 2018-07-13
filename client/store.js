@@ -10,7 +10,6 @@ import rootReducer from './reducers/index';
 
 import { colonists } from './data/characters';
 
-
 // create an object for the default data
 const defaultState = {
 	colonists,
@@ -24,7 +23,7 @@ const persistConfig = {
 	storage,
 }
 
-const persistedReducer = persistReducer(persistConfig, rootReducer)
+const persistedReducer = persistReducer(persistConfig, rootReducer, defaultState)
 
 const store = createStore(
 	// defaultState,

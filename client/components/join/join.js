@@ -18,19 +18,13 @@ class Join extends Component {
 		handleClick(event) {
 			event.preventDefault();
 			
-			const code = this.refs.code;
-			const name = this.refs.name;
-			console.log('refs', code, ' : ', name);
+			const code = this.refs.code.value;
+			const name = this.refs.name.value;
+			console.log('refs', code, ' : ', name, 'event', event.input);
 			// const {name,code} = event.target;
 			this.props.joinRoom(name,code);
 		}
 
-		// handleChange(event) {
-		// 	const {name,value} = event.target;
-		// 	this.setState({
-		// 		[name]: value
-		// 	})
-		// }
 
     render() {
 
@@ -38,16 +32,16 @@ class Join extends Component {
             <form className="join" onSubmit={this.handleClick} >
                 <label>
                 Code
-                <input type="text" name="code" />
+                <input type="text" name="code" ref="code" />
                 <br/>
                 </label>
                 <label>
                 Name
-                <input type="text" name="name" />
+                <input type="text" name="name" ref="name" />
                 <br/>
                 </label>
                 <br/>
-                <input type="submit" className="submitButton" value="Enter Room" onClick={this.handleClick} />
+                <input type="submit" className="submitButton" value="Enter Room"  />
                 
                
             </form>

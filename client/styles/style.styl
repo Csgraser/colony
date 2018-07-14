@@ -2,9 +2,13 @@
 @import '_typography.styl'
 @import '_animations.styl'
 
+ html 
+  font-size: 62.5% 
+
 body
-  background-image url(./style-images/images/colony-background.png) 
+  background-image url(./style-images/images/colony-background.png)
   font-family 'Nosifer', cursive;
+  line-height: 1.6
 
 @css{
 h1 a{
@@ -15,8 +19,11 @@ h1 a{
 .UserCard
 	background-color red
 	padding 10px
-	margin 10px
+	margin-left 33%
 	display inline-block
+	border-color black
+	border-width 10px
+	border-radius 10px
 
 .UserCard-image
 	background-image url(./style-images/images/male-colonist.png)
@@ -182,10 +189,6 @@ h1 a
     border-color black
     outline 0
 
-.join
-  
-
-
 /*
   Cowboy style speech bubble - you should probably use an SVG for this if you are doing more icons.
 */
@@ -223,5 +226,6 @@ h1 a
     font-size 15px
     font-weight bold
   
-  
+  .players
+		margin-left: 100 px
 

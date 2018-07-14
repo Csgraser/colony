@@ -1,5 +1,3 @@
-const VerifyCode = require('./controllers/verifycode');
-const CreateHost = require('./controllers/createHost');
 const StartGame = require('./controllers/startGame');
 const EndGame = require('./controllers/endGame');
 const GetPlayerData = require('./controllers/getPlayerData');
@@ -28,17 +26,13 @@ module.exports = function(app, io) {
 		res.json(req.body);
 	});
 
-	// app.post('/api/createPlayer/', CreatePlayer.createPlayer, function(req,res){
-	// 	res.json(req.body);	
-	// });
-
 	// PUT player into room
 	app.put('/api/addPlayer', AddPlayer.addPlayer, function(req,res,next){
 		res.json(req.body);
 	});
 
 	// PUT toggles 'running' property in Room to true
-	app.put('/api/startGame/:roomCode', StartGame.startGame, function(req,res){
+	app.put('/api/startGame/', StartGame.startGame, function(req,res){
 		res.json(req.body);
 	});
 

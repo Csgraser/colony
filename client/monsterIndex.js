@@ -8,11 +8,11 @@ import css from './styles/style.styl';
 //import components
 import App from './components/App';
 import GameGrid from './components/GameGrid';
-import PlayerDetail from './components/PlayerDetail';
 import UserLanding from './components/game_connections/users_landing';
 import MainLanding from './components/game_connections/main_landing';
-import LinkVerification from './components/game_connections/link_verification';
+import GameHost from './components/game_connections/game_host';
 import JoinForm from './components/join/join';
+import Instructions from './components/instructions/instructions';
 
 
 // import react router deps
@@ -25,15 +25,15 @@ import Raven from 'raven-js';
 import { sentry_url, logException } from "./data/config";
 
 Raven.config(sentry_url
-	// 	, 	{
-	// 	tags: {
-	// 		git_commit: 'asdfasdf',
-	// 		userLevel: 'editor'
-	// 	}
-	// }
+		, 	{
+		tags: {
+			git_commit: 'asdfasdf',
+			userLevel: 'editor'
+		}
+	}
 ).install();
 
-//This below two lines would be for capturing errors
+//The below two lines would be for capturing errors
 // Raven.captureMessage('Something bad happened'); //fake an error
 // Raven.showReportDialog(); //report the error to user and allow feedback
 
@@ -42,11 +42,11 @@ const router = (
 		<Router history={history}>
 			
 			<Route path="/" component={App}>
-				<Route path="/view/:postId" component={PlayerDetail}></Route>
 				<Route path="/userlanding" component={UserLanding}></Route>
 				<Route path="/mainlanding" component={MainLanding}></Route>
-				<Route path="/linkverification" conponent={LinkVerification}></Route>
+				<Route path="/gamehost" component={GameHost}></Route>
 				<Route path="/joinForm" component={JoinForm}></Route>
+				<Route path="/instructions" component={Instructions}></Route>
 				<IndexRoute exact component={GameGrid}>
 				</IndexRoute>
 			</Route>
@@ -54,4 +54,4 @@ const router = (
 	</Provider>
 );
 
-render(router, document.getElementById('root'));
+render(router, document.getElementById('root')); 

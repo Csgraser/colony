@@ -14,6 +14,12 @@ const io = module	.exports.io = require('socket.io')(server);
 const SocketServer= require('./server/socket_server');
 const compiler = webpack(config);
 
+//Used the below to test if I was getting a process.env
+// require('dotenv').config();
+// app.get('/hellocreds', (req, res) => {
+// 	res.send(process.env.SENTRY_KEY);
+// })
+
 //----------Database stuff-------------------
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/colony";
 mongoose.Promise = Promise;
@@ -46,7 +52,7 @@ router(app, io);
 io.on('connection', SocketServer);
 
 const PORT = process.env.PORT || 7770;
-server.listen(PORT, 'localhost', function(err) {
+server.listen(PORT, function(err) {
   if (err) {
     console.log(err);
     return;

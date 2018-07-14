@@ -1,12 +1,14 @@
-import { createStore, applyMiddleware } from 'redux';
-import { syncHistoryWithStore} from 'react-router-redux';
+import { createStore, applyMiddleware, compose } from 'redux';
+import { syncHistoryWithStore } from 'react-router-redux';
 import { browserHistory } from 'react-router';
 import reduxThunk from 'redux-thunk';
+import storage from 'redux-persist/lib/storage'
+import { persistStore, persistReducer } from 'redux-persist'
 
 // import the root reducer
 import rootReducer from './reducers/index';
 
-import {colonists} from './data/characters';
+import { colonists } from './data/characters';
 
 
 // create an object for the default data
@@ -15,22 +17,34 @@ const defaultState = {
 	socket: ''
 };
 
+//persistant state settings
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const persistConfig = {
+	key: 'root',
+	storage,
+}
+
+const persistedReducer = persistReducer(persistConfig, rootReducer)
+
 const store = createStore(
-	rootReducer, 
-	defaultState,
+	// defaultState,
+	persistedReducer,
 	//adding redux thunk to help handle async requests
-	applyMiddleware(
-		reduxThunk
+	composeEnhancers(
+		applyMiddleware(
+			reduxThunk
+		)
 	)
 );
+let persistor = persistStore(store)
 
-export const history = syncHistoryWithStore(browserHistory, store);
+export const history = syncHistoryWithStore(browserHistory, store, persistor);
 
-if(module.hot) {
-  module.hot.accept('./reducers/',() => {
-    const nextRootReducer = require('./reducers/index').default;
-    store.replaceReducer(nextRootReducer);
-  });
+if (module.hot) {
+	module.hot.accept('./reducers/', () => {
+		const nextRootReducer = require('./reducers').default;
+		store.replaceReducer(nextRootReducer);
+	});
 }
 
 export default store;

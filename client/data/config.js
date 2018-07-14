@@ -1,6 +1,9 @@
+import {} from 'dotenv/config';
 import Raven from 'raven-js';
-import KEYS from '../../config/keys_prod.js';
-
+import KEYS from '../../config/keys_dev.js';
+import Keystest from '../../keys';
+//TODO get keys from .env file
+// console.log(Keystest);
 const sentry_key = KEYS.sentry_key;
 
 const sentry_app = '1234579';

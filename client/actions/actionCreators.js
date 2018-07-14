@@ -38,11 +38,19 @@ export function joinRoom(name,code){
 			browserHistory.push('/userlanding');
 		})
 	}
-	// {
-	// 	type: 'JOIN_ROOM',
-	// 	name,
-	// 	code
-	// }
+}
+
+//Start Game
+export function startGame(code){
+	console.log('start game action: ', code);
+	return function(dispatch){
+		axios.put('/api/startGame/',{code})
+		.then( response => {
+			console.log('start game action creator response: ', response);
+			dispatch({type: 'START_GAME', payload: response});
+			browserHistory.push('/gamehost'); 
+		})
+	}
 }
 
 // Create a room and code for users to enter room then redirect user to main game landing page

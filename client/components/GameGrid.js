@@ -5,7 +5,7 @@ require('../../server/controllers/auth.js');
 import ReactDOM from 'react-dom';
 import { GoogleLogin } from 'react-google-login';
 import { connect } from 'react-redux';
-import { handleSignIn } from '../actions/auth.actions';
+import { handleSignIn } from '../actions/auth.actions.js';
 
 const responseGoogle = (response) => {
 	console.log(response);
@@ -35,9 +35,10 @@ class GameGrid extends React.Component {
 
 			{!this.props.auth.isSignedIn && (
 
-				<GoogleLogin className="button"
+				<GoogleLogin 
+				className="button"
 				clientId="368878887068-dqo0j4ru3m1uk6jgsjuvh823lq0871d2.apps.googleusercontent.com"
-				buttonText="Login"
+				buttonText="Login & Create Game Room"
 				onSuccess={this.onSignIn}
 				onFailure={() => console.log("LOGIN FAILURE")}
 				/>
@@ -46,6 +47,14 @@ class GameGrid extends React.Component {
 					<button className="button">
 
 							Join a Game
+						
+					</button>
+				</Link>
+
+				<Link className="instructions" to="instructions">
+					<button className="button">
+
+							How to Play 
 						
 					</button>
 				</Link>

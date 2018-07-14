@@ -31,11 +31,25 @@ class Main extends React.Component {
 		this.addSocketURL(socket);
 	}
 
+		/*
+	*	Sets the user property in state to null.
+	*/
+	logout() {
+		const { socket } = this.state
+		socket.emit("LOGOUT")
+		this.setState({ user: null })
+
+	}
+
 	addSocketURL(socketURL){
 		this.props.addMainSocketURL(socketURL);
 		console.log(this.props);
 	}
 
+	// this.props.socket[0].socket
+
+	// const { socket } = this.props.socket[0];
+	
 	render() {
 		return (
 			// <PersistGate loading={null} persistor={persistor}>

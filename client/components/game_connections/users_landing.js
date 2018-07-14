@@ -14,4 +14,11 @@ const UsersListEntry = (props) => {
 	);
 }
 
-export default UsersListEntry;
+
+{/* {props.photo !== '' ?
+	<div>
+	<Avatar src= {props.photo} size= {75} disabled= {true}/>
+	{props.username}
+	</div> :
+	<div>{props.username}</div>
+} */}

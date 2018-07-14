@@ -1,0 +1,59 @@
+[
+	{
+		"name": "Male Colonist",
+
+		"photo": "../styles/style-images/images/male-colonist.png",
+		"ability": [
+		],
+		"type": "general",
+		"role": "clean"
+	},
+	{
+		"name": "Female Colonist",
+		"photo": "../styles/style-images/images/female-colonist.png",
+		"ability": [
+		],
+		"type": "general",
+		"role": "clean"
+	},
+	{
+		"name": "Genderless Colonist",
+
+		"photo": "../styles/style-images/images/genderfluid-colonist.png",
+		"ability": [
+		],
+		"type": "general",
+		"role": "clean"
+	},
+
+	{
+		"name": "Male Infected",
+
+		"photo": "../styles/style-images/images/male-infected.png",
+		"ability": [
+		],
+		"type": "general",
+		"role": "infected"
+	},
+
+	{
+		"name": "Female Infected",
+
+		"photo": "../styles/style-images/images/female-infected.png",
+		"ability": [
+		],
+		"type": "general",
+		"role": "infected"
+	},
+
+	{
+		"name": "Genderless Infected",
+
+		"photo": "../styles/style-images/images/genderfluid-infected.png",
+		"ability": [
+		],
+		"type": "general",
+		"role": "infected"
+	}
+]
+

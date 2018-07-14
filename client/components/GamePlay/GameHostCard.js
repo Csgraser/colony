@@ -6,7 +6,7 @@ export default function GameHostCard(props) {
 	return (
 		<div className="GameHostCard">
 			<div className="GameHostCard-image" />
-			<span className="GameHostCard-timer">Timer Here</span>
+			<span className="GameHostCard-timer linkEnter">Timer Here</span>
 
 			<button className="button">End Game</button>
 		</div>

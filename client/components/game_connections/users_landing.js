@@ -1,5 +1,5 @@
 import React from 'react';
-import UserCard from '../UserCard';
+import UserCard from '../GamePlay/UserCard';
 // import Avatar from 'material-ui/Avatar';
 
 

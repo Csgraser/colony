@@ -11,7 +11,6 @@ export const colonists = [
 	},
 	{
 		"name": "Female Colonist",
-
 		"photo": "json-images/female-colonist.png",
 		"ability": [
 			//this is where we will put functionality for the ability of the class

@@ -1,5 +1,5 @@
 import React from 'react';
-import UserCard from '../UserCard';
+import UserCard from '../GamePlay/UserCard';
 // import Avatar from 'material-ui/Avatar';
 
 
@@ -14,4 +14,11 @@ const UsersListEntry = (props) => {
 	);
 }
 
-export default UsersListEntry;
+
+{/* {props.photo !== '' ?
+	<div>
+	<Avatar src= {props.photo} size= {75} disabled= {true}/>
+	{props.username}
+	</div> :
+	<div>{props.username}</div>
+} */}

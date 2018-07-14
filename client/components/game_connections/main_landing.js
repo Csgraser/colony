@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 
 
 class MainLanding extends Component {
-	constructor(props){
+	constructor(props) {
 		super(props);
 		this.handleClick = this.handleClick.bind(this);
-		console.log(this.props,'main landing props');
+		console.log(this.props, 'main landing props');
 	}
 
 	handleClick(event) {
@@ -20,20 +20,24 @@ class MainLanding extends Component {
 
 	render() {
 
-    return (
+		return (
 			<div>
-      <div className="linkEnter">
-        <div id="linkcode">Game Code: {this.props.connection[0].room.data.roomCode}</div>
-      
+				<div className="linkEnter">
+					<div id="linkcode">Game Code: {this.props.connection[0].room.data.roomCode}</div>
+
+				</div>
+				<button className="startGameButton" onSubmit={this.handleClick} onClick={this.handleClick}>Start Game</button>
+
+				<div >
+					<span className="players linkEnter" >Players in Lobby: {this.props.connection[0].room.data.players}</span>
+					{console.log("Tyler props", this.props.connection[0].room)};
+				</div >
 			</div>
-			<button className="startGameButton" onSubmit={this.handleClick} onClick={this.handleClick}>Start Game</button>
-			
-		</div>
-    );
-  }
+		);
+	}
 }
 
-function mapStateToProps(state){
+function mapStateToProps(state) {
 	return {
 		connection: state.connections
 	}

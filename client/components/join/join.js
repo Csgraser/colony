@@ -60,12 +60,12 @@ class Join extends Component {
             <form className="join" onSubmit={this.handleClick} >
                 <label>
                 Code
-                <input type="text" name="code" />
+                <input type="text" name="code" ref="code"/>
                 <br/>
                 </label>
                 <label>
                 Name
-                <input type="text" name="name" />
+                <input type="text" name="name" ref="name"/>
                 <br/>
                 </label>
                 <br/>

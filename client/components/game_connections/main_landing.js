@@ -20,7 +20,9 @@ class MainLanding extends Component {
 	}
 
 	render() {
-
+		let haveSocket = this.props.socket[0].socket;
+		if (haveSocket === 0){haveSocket = []}
+		console.log('some socket',haveSocket);
 		return (
 			<div>
 				<div className="linkEnter">
@@ -31,7 +33,7 @@ class MainLanding extends Component {
 
 				<div >
 					<br/>
-					<div className="players linkEnter" >Players in Lobby: 				{this.props.socket[0].socket.map((name,index)=>{
+					<div className="players linkEnter" >Players in Lobby: 				{haveSocket.map((name,index)=>{
 						return <span className="playerList" key={index}>{name.user.name}</span>
 					})}
 					</div>
@@ -50,4 +52,5 @@ function mapStateToProps(state) {
 
 //Higher order component
 export default connect(mapStateToProps)(MainLanding);
+
 

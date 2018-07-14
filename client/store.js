@@ -2,8 +2,9 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { browserHistory } from 'react-router';
 import reduxThunk from 'redux-thunk';
-import storage from 'redux-persist/lib/storage'
-import { persistStore, persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage';
+import { persistStore, persistReducer } from 'redux-persist';
+import { initSockets } from './sockets_client';
 
 // import the root reducer
 import rootReducer from './reducers/index';
@@ -36,6 +37,7 @@ const store = createStore(
 	)
 );
 let persistor = persistStore(store)
+initSockets(store);
 
 export const history = syncHistoryWithStore(browserHistory, store, persistor);
 

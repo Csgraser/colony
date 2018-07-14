@@ -1,5 +1,7 @@
 import axios from 'axios';
 import { browserHistory } from 'react-router';
+import { setUserSocket, verifyNameSocketClient } from '../sockets_client';
+
 //increment
 //Todo add author
 export function increment(index) {
@@ -35,6 +37,7 @@ export function joinRoom(name,code){
 		.then( response => {
 			console.log('join room action creator response: ', response);
 			dispatch({type: 'JOIN_ROOM', payload: response});
+			verifyNameSocketClient(name);
 			browserHistory.push('/userlanding');
 		})
 	}
@@ -64,3 +67,14 @@ export function createRoom() {
       })
   }
 }
+
+// Set user
+export function setUser(user) {
+	return function(dispatch){
+		console.log('setting user: ',user);
+		dispatch({type: 'SET_USER', user});
+		setUserSocket(user);
+	}
+}
+
+

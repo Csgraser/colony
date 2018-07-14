@@ -1,24 +1,35 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import UserCard from '../GamePlay/UserCard';
-// import Avatar from 'material-ui/Avatar';
 
 
-const UsersListEntry = (props) => {
-	return (
-		<div className="userImage">
+class UsersLanding extends Component {
+	constructor(props) {
+		super(props);
+		console.log('user landing props: ',this.props);
+	}
+
+
+	render() {
+
+		return (
+			<div className="userImage">
 			<div>
-				<UserCard />
+				
+				<UserCard name={this.props}/>
 	
     </div>
 		</div>
-	);
+		);
+	}
 }
 
+function mapStateToProps(state) {
+	return {
+		users: state.users
+	}
+}
 
-{/* {props.photo !== '' ?
-	<div>
-	<Avatar src= {props.photo} size= {75} disabled= {true}/>
-	{props.username}
-	</div> :
-	<div>{props.username}</div>
-} */}
+//Higher order component
+export default connect(mapStateToProps)(UsersLanding);
+

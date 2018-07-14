@@ -20,6 +20,7 @@ export function initSockets(store){
 		store.dispatch({type: 'SET_USER', users: user})
 	});
 
+
 }
 
 //all client-side socket emitters will be contained here

@@ -1,6 +1,6 @@
 # Colony
 
-A simple React + Redux implementation. This will be turned into a free video series once the app is totally fleshed out.
+A simple idea to play a game where users with access will create a game on a big screen and then other users join that game on their other devices.
 
 ## Running
 
@@ -14,9 +14,17 @@ Run `npm build` to create a distro folder and a bundle.js file.
 
 # Technologies:
 
+## Socket.io --> Adding users to room
+### Socket Connected
+![Image of sentry portal](/readmeImages/socketConnected.PNG)
+### Main Landing Page After Login
+![Image of main login](/readmeImages/MainLandingPage.PNG)
+
+
 ## Sentry --> User side Error tracking
 Images of it working:
 (Sending Emails)
 ![Image of Sentry sending emails](/readmeImages/SentryErrorTracking.PNG)
 Image of the Sentry portal:
-![Image of sentry portal](/readmeImages/)
+![Image of sentry portal](/readmeImages/SentryErrorTicketingPortal.PNG)
+

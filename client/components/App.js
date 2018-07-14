@@ -15,7 +15,8 @@ function mapStateToProps(state) {
   return {
 		connection: state.connections,
 		socket: state.socket,
-		colonists: state.colonists
+		colonists: state.colonists,
+		errors: state.errors
   }
 }
 

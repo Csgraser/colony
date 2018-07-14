@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import './gameConnections.styl';
 
 
 class MainLanding extends Component {
@@ -29,7 +30,11 @@ class MainLanding extends Component {
 				<button className="startGameButton" onSubmit={this.handleClick} onClick={this.handleClick}>Start Game</button>
 
 				<div >
-					<span className="players linkEnter" >Players in Lobby: {this.props.connection[0].room.data.players}</span>
+					<br/>
+					<div className="players linkEnter" >Players in Lobby: 				{this.props.socket[0].socket.map((name,index)=>{
+						return <span className="playerList" key={index}>{name.user.name}</span>
+					})}
+					</div>
 					{console.log("Tyler props", this.props.connection[0].room)};
 				</div >
 			</div>

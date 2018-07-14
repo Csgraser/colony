@@ -20,9 +20,14 @@ class MainLanding extends Component {
 	}
 
 	render() {
-		let haveSocket = this.props.socket[0].socket;
-		if (haveSocket === 0){haveSocket = []}
-		console.log('some socket',haveSocket);
+		let haveSocket = this.props.socket;
+		console.log('some socket1',haveSocket.length);
+		if (haveSocket.length === 0){
+			haveSocket = []
+		} else {
+			haveSocket = this.props.socket[0].socket
+		}
+		console.log('some socket2',haveSocket);
 		return (
 			<div>
 				<div className="linkEnter">

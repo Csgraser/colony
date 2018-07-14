@@ -25,7 +25,7 @@ class MainLanding extends Component {
 		if (haveSocket.length === 0){
 			haveSocket = []
 		} else {
-			haveSocket = this.props.socket[0].socket
+			haveSocket = this.props.socket[0].socket	
 		}
 		console.log('some socket2',haveSocket);
 		return (

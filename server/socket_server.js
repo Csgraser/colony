@@ -11,7 +11,7 @@ let connectedUsers = {}
 
 module.exports = function (socket) {
 
-	// console.log('\x1bc'); //clears console
+	
 	console.log("Socket Id " + socket.id + ' has connected');
 
 	//Verify Username
@@ -20,7 +20,7 @@ module.exports = function (socket) {
 		if (isUser(connectedUsers, nickname)) {
 			callback({ isUser: true, user: null })
 		} else {
-			callback({ isUser: false, user: createUser({ name: nickname }) })
+			callback({ isUser: false, user: createUser({ name: nickname, socketId:socket.id }) })
 		}
 	})
 
@@ -48,4 +48,8 @@ module.exports = function (socket) {
 		}
 	})
 
+}
+
+function isUser(userList, username){
+	return username in userList
 }

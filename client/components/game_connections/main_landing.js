@@ -53,3 +53,4 @@ function mapStateToProps(state) {
 //Higher order component
 export default connect(mapStateToProps)(MainLanding);
 
+

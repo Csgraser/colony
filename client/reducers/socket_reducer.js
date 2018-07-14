@@ -3,19 +3,19 @@ function socket(state = [], action){
 		case 'MAIN_SOCKET':
 			console.log('you set the main socket', action.socketURL);
 			return [
-				...state,
+				// ...state,
 				{socket: action.socketURL}
 			]
 		case 'SET_USER':
 		console.log('you set user: ',action.user)
 			return [
-				...state,
+				// ...state,
 				{socket: action.user}
 			]
 		case 'SET_USERS':
 			console.log('socket users',action.users);
 			return [
-				...state,
+				// ...state,
 				{socket: action.users}
 			]
 		default: 

@@ -44,12 +44,11 @@ module.exports = function (socket) {
 
 	//User disconnects. 'disconnect' is a standard socket event, similiar to 'connect'
 	socket.on('disconnect', () => {
-		if ("user" in socket) {
-			connectedUsers = removeUser(connectedUsers, socket.user.name)
+			connectedUsers = removeUser(connectedUsers, socket.id)
 
 			io.emit(USER_DISCONNECTED, connectedUsers)
-			console.log("Disconnect", connectedUsers);
-		}
+			console.log(socket.id + " just disconnected", connectedUsers);
+		
 	})
 
 }
@@ -77,8 +76,18 @@ function addUser(userList, user){
 * @param username {string} name of user to be removed
 * @return userList {Object} Object with key value pairs of Users
 */
-function removeUser(userList, username){
-	let newList = Object.assign({}, userList)
-	delete newList[username]
-	return newList
+function removeUser(userList, socketId){
+	// Searches through user list (connectedUsers array) and finds the one with the matching socket that disconnects, then removes it from the array and sends it back.
+for (let i = 0; i < userList.length; i++) {
+	if(socketId === userList[i].user.socketId) {
+		userList.splice(i, 1);
+	}
+	
+}
+return userList
+
+
+	// let newList = Object.assign({}, userList)
+	// delete newList[username]
+	// return newList
 }

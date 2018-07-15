@@ -14,6 +14,10 @@ export function initSockets(store){
 		console.log('set users hit sockets client',connectedUsers);
 		store.dispatch({type: 'SET_USERS', users: connectedUsers})
 	});
+	socket.on('USER_DISCONNECTED', function(connectedUsers){
+		console.log('after disconnect, set users hit sockets client',connectedUsers);
+		store.dispatch({type: 'SET_USERS', users: connectedUsers})
+	});
 	// Will store our unique client user object
 	socket.on('CONNECTED_USER', function(user){
 		console.log('set user sockets client',user);
